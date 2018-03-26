@@ -25,7 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\dataaccess_aspnetcore\src\Digipolis.DataAccess\Digipolis.DataAccess.csproj" />
+    <ProjectReference Include="..\Digipolis.DataAccess\Digipolis.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>

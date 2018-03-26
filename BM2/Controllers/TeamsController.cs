@@ -1,4 +1,5 @@
-﻿using BM2.Business.Readers;
+﻿using BM2.Business.Exceptions;
+using BM2.Business.Readers;
 using BM2.Business.Writers;
 using BM2.DataAccess.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -38,19 +39,60 @@ namespace BM2.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody]Team model)
         {
-            throw new NotImplementedException();
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    await writer.Add(model);
+                    return Created("Get", new { id = model.Id });
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest(new BusinessException("Er ging iets mis met het opslaan van de gegevens..", ex.StackTrace));
+                }
+            }
+            else
+            {
+                return BadRequest(new ModelMappingException());
+            }
         }
 
         [HttpPut]
         public async Task<IActionResult> Put([FromBody]Team model, int id)
         {
-            throw new NotImplementedException();
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    return await AddOrUpdateEntity(model, id);
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest(new BusinessException("Er ging iets mee met het updaten van de gegevens..", ex.StackTrace));
+                }
+            }
+            else
+            {
+                return BadRequest(new ModelMappingException());
+            }
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            throw new NotImplementedException();
+            await writer.Delete(id);
+            return NoContent();
+        }
+
+        private async Task<IActionResult> AddOrUpdateEntity(Team model, int id)
+        {
+            if (id == 0)
+            {
+                await writer.Add(model);
+                return Created("Get", new { id = model.Id });
+            }
+            await writer.Update(model, id);
+            return NoContent();
         }
     }
 }
