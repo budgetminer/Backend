@@ -12,6 +12,12 @@ namespace BM2
             services.AddTransient<ICustomerReader, CustomerReader>();
             services.AddTransient<ICustomerWriter, CustomerWriter>();
 
+            services.AddTransient<ILevelsReader, LevelsReader>();
+            services.AddTransient<ILevelsWriter, LevelsWriter>();
+
+            services.AddTransient<ITeamReader, TeamReader>();
+            services.AddTransient<ITeamWriter, TeamWriter>();
+
             return services;
         }
     }

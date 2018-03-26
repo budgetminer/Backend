@@ -17,8 +17,8 @@ namespace BM2.Controllers
 
         public CustomersController(ICustomerReader reader, ICustomerWriter writer)
         {
-            this.reader = reader ?? throw new NotImplementedException(nameof(reader));
-            this.writer = writer ?? throw new NotImplementedException(nameof(writer));
+            this.reader = reader ?? throw new ArgumentNullException(nameof(reader));
+            this.writer = writer ?? throw new ArgumentNullException(nameof(writer));
         }
 
         [HttpGet]

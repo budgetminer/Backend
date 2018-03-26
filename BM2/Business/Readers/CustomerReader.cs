@@ -10,11 +10,11 @@ namespace BM2.Business.Readers
 {
     public class CustomerReader : ReaderBase<Customer>, ICustomerReader
     {
+        private IUnitOfWork uow;
 
         public CustomerReader(IUnitOfWork uow ) : base(uow)
         {
-
+            this.uow = uow ?? throw new ArgumentNullException(nameof(uow));
         }
-
     }
 }

@@ -30,7 +30,7 @@ namespace BM2
             services.AddBusinessServices();
             services.AddAutoMapper();
 
-
+            services.AddCors();
             services.AddMvc();
         }
 
@@ -45,7 +45,12 @@ namespace BM2
             }
 
             app.UseStaticFiles();
-
+            app.UseCors(options => {
+                options.AllowAnyMethod();
+                options.AllowAnyHeader();
+                options.AllowAnyOrigin();
+                options.AllowCredentials();
+            });
             app.UseMvc(routes => {
                 routes.MapRoute(
                     name: "default",
