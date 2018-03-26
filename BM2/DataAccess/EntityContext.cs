@@ -9,7 +9,7 @@ namespace BM2.DataAccess {
         public DbSet<Team> Teams { get; set; }
         public DbSet<Customer> Customers{ get; set; }
         public DbSet<Level> Levels{ get; set; }
-        public DbSet<Headcount> Headcounts { get; set; }
+        public DbSet<HeadCount> Headcounts { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder builder) {
             if (!builder.IsConfigured) {

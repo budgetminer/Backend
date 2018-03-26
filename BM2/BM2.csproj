@@ -5,16 +5,27 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DataAccess\Models\" />
+    <Compile Remove="DataAccess\Models\**" />
+    <Content Remove="DataAccess\Models\**" />
+    <EmbeddedResource Remove="DataAccess\Models\**" />
+    <None Remove="DataAccess\Models\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="6.2.2" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\dataaccess_aspnetcore\src\Digipolis.DataAccess\Digipolis.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,83 +1,98 @@
-﻿using BM2.DataAccess;
+﻿using BM2.Business.Exceptions;
+using BM2.Business.Readers;
+using BM2.Business.Writers;
 using BM2.DataAccess.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
-using Microsoft.EntityFrameworkCore;
 using System;
-using System.Linq;
 using System.Threading.Tasks;
 
-namespace BM2.Controllers {
+namespace BM2.Controllers
+{
     [Route("[controller]")]
     public class CustomersController : Controller
     {
+        private ICustomerReader reader;
+        private ICustomerWriter writer;
+
+        public CustomersController(ICustomerReader reader, ICustomerWriter writer)
+        {
+            this.reader = reader ?? throw new NotImplementedException(nameof(reader));
+            this.writer = writer ?? throw new NotImplementedException(nameof(writer));
+        }
+
         [HttpGet]
-        public async Task<IActionResult> GetAll() {
-            using (var db = new EntityContext()) {
-                return Ok(await db.Customers.ToListAsync());
-            }
+        public async Task<IActionResult> GetAll()
+        {
+            var result = await reader.GetAll();
+            return Ok(result);
         }
 
         [HttpGet("{id}")]
-        public IActionResult Get(int id) {
-            using (var db = new EntityContext()) {
-                return Ok(db.Customers.Where(x => x.id == id).FirstOrDefault());
-            }
+        public async Task<IActionResult> Get(int id)
+        {
+            var result = await reader.Get(id);
+            return Ok(result);
         }
-        
+
         [HttpPost]
-        public async Task<IActionResult> Post(Customer model) {
-            try {
-                if (model != null) {
-                    using (var db = new EntityContext()) {
-                        await db.Customers.AddAsync(model);
-                        await db.SaveChangesAsync();
-                    }
-                    return Ok("Aanmaken customer OK");
+        public async Task<IActionResult> Post([FromBody]Customer model)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    await writer.Add(model);
+                    return Created("Get", new { id = model.Id });
                 }
-                return BadRequest("Model klopt niet");
+                catch (Exception ex)
+                {
+                    return BadRequest(new BusinessException("Er ging iets mis met het opslaan van de gegevens..", ex.StackTrace));
+                }
             }
-            catch (Exception ) {
-                return BadRequest("Aanmaken customer mislukt");
+            else
+            {
+                return BadRequest(new ModelMappingException());
             }
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(Customer model, int id) {
-            try {
-                if (model != null) {
-                    using (var db = new EntityContext()) {
-                        var oudeEntity = await db.Customers.FindAsync(id);
-                        if (oudeEntity != null) {
-                            db.Customers.Update(model);
-                        }
-                        else {
-                            await db.Customers.AddAsync(model);
-                        }
-                        await db.SaveChangesAsync();
-                    }
-                    return Ok("Upgedatet");
+        public async Task<IActionResult> Put(Customer model, int id)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    return await AddOrUpdateEntity(model, id);
                 }
-                return BadRequest("Model klopt niet");
+                catch (Exception ex)
+                {
+                    return BadRequest(new BusinessException("Er ging iets mee met het updaten van de gegevens..", ex.StackTrace));
+                }
             }
-            catch (Exception) {
-                return BadRequest("Updaten mislukt");
+            else
+            {
+                return BadRequest(new ModelMappingException());
             }
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete (int id) {
-            try {
-                using (var db = new EntityContext()) {
-                    db.Customers.Remove(await db.Customers.Where(x => x.id == id).FirstOrDefaultAsync());
-                    await db.SaveChangesAsync();
-                }
-                return Ok("Deleted");
-            }
-            catch (Exception) {
-                return BadRequest("delete mislukt");
-            }
+        public async Task<IActionResult> Delete(int id)
+        {
+            await writer.Delete(id);
+            return NoContent();
         }
 
+
+        private async Task<IActionResult> AddOrUpdateEntity(Customer model, int id)
+        {
+            if (id == 0)
+            {
+                await writer.Add(model);
+                return Created("Get", new { id = model.Id });
+            }
+            await writer.Update(model, id);
+            return NoContent();
+        }
     }
 }

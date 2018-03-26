@@ -26,6 +26,11 @@ namespace BM2
 
             services.AddDbContext<EntityContext>(options => options.UseSqlServer(connectionLocal));
 
+            //services
+            services.AddBusinessServices();
+            services.AddAutoMapper();
+
+
             services.AddMvc();
         }
 
