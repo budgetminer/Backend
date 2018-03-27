@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Digipolis.DataAccess.Exceptions;
-using Digipolis.DataAccess.Repositories;
-using Digipolis.DataAccess.Entities;
+using DataAccess.Exceptions;
+using DataAccess.Repositories;
+using DataAccess.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Digipolis.DataAccess.Uow
+namespace DataAccess.Uow
 {
     public abstract class UnitOfWorkBase<TContext> : IUnitOfWorkBase where TContext : DbContext
     {

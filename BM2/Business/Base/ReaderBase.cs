@@ -1,6 +1,6 @@
-﻿using Digipolis.DataAccess;
-using Digipolis.DataAccess.Entities;
-using Digipolis.DataAccess.Repositories;
+﻿using DataAccess;
+using DataAccess.Entities;
+using DataAccess.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;

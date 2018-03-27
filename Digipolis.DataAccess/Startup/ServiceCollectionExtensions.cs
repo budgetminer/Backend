@@ -1,13 +1,12 @@
 ﻿using System;
-using Digipolis.DataAccess.Context;
-using Digipolis.DataAccess.Uow;
-using Digipolis.DataAccess.Repositories;
-using Digipolis.DataAccess.Paging;
+using DataAccess.Context;
+using DataAccess.Uow;
+using DataAccess.Repositories;
+using DataAccess.Paging;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
-namespace Digipolis.DataAccess
+namespace DataAccess
 {
     public static class ServiceCollectionExtentions
     {

@@ -1,7 +1,7 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
 
-namespace Digipolis.DataAccess
+namespace DataAccess
 {
     public interface IUowProvider
     {

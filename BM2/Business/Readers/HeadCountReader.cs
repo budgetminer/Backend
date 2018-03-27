@@ -4,9 +4,9 @@ using DataAccess;
 
 namespace BM2.Business.Readers
 {
-    public class TeamReader : ReaderBase<Team>, ITeamReader
+    public class HeadCountReader : ReaderBase<HeadCount>, IHeadCountReader
     {
-        public TeamReader(IUnitOfWork uow) : base(uow)
+        public HeadCountReader(IUnitOfWork uow) : base(uow)
         {
         }
     }

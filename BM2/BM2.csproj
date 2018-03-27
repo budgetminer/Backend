@@ -6,18 +6,19 @@
 
   <ItemGroup>
     <Compile Remove="DataAccess\Models\**" />
+    <Compile Remove="wwwroot\**" />
     <Content Remove="DataAccess\Models\**" />
+    <Content Remove="wwwroot\**" />
     <EmbeddedResource Remove="DataAccess\Models\**" />
+    <EmbeddedResource Remove="wwwroot\**" />
     <None Remove="DataAccess\Models\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <None Remove="wwwroot\**" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="6.2.2" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Swashbuckle" Version="6.0.0-beta902" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,7 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Digipolis.DataAccess\Digipolis.DataAccess.csproj" />
+    <ProjectReference Include="..\Digipolis.DataAccess\DataAccess.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-﻿using Digipolis.DataAccess.Entities;
+﻿using DataAccess.Entities;
 using System.ComponentModel.DataAnnotations;
 
 namespace BM2.DataAccess.Entities

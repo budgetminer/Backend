@@ -1,8 +1,8 @@
 ﻿using System;
-using Digipolis.DataAccess;
+using DataAccess;
 using Microsoft.EntityFrameworkCore;
 
-namespace Digipolis.DataAccess.Uow
+namespace DataAccess.Uow
 {
     public class UnitOfWork : UnitOfWorkBase<DbContext>, IUnitOfWork
     {

@@ -4,9 +4,9 @@ using DataAccess;
 
 namespace BM2.Business.Readers
 {
-    public class TeamReader : ReaderBase<Team>, ITeamReader
+    public class LevelReader : ReaderBase<Level>, ILevelReader
     {
-        public TeamReader(IUnitOfWork uow) : base(uow)
+        public LevelReader(IUnitOfWork uow) : base(uow)
         {
         }
     }

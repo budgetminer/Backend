@@ -1,4 +1,4 @@
-﻿using Digipolis.DataAccess.Entities;
+﻿using DataAccess.Entities;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 

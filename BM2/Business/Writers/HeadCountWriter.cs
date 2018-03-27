@@ -4,9 +4,9 @@ using DataAccess;
 
 namespace BM2.Business.Writers
 {
-    public class TeamWriter : WriterBase<Team>, ITeamWriter
+    public class HeadCountWriter : WriterBase<HeadCount>, IHeadCountWriter
     {
-        public TeamWriter(IUnitOfWork uow) : base(uow)
+        public HeadCountWriter(IUnitOfWork uow) : base(uow)
         {
         }
     }

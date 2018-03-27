@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq.Expressions;
-using Digipolis.DataAccess.Entities;
+using DataAccess.Entities;
 
-namespace Digipolis.DataAccess.Query
+namespace DataAccess.Query
 {
 	public class Filter<TEntity>
 	{

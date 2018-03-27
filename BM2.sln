@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BM2", "BM2\BM2.csproj", "{222CB67A-B7D6-4244-B4F8-1561788B0AC7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Digipolis.DataAccess", "Digipolis.DataAccess\Digipolis.DataAccess.csproj", "{A6976D52-EC96-4C85-B98B-54CBAC93A9BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "Digipolis.DataAccess\DataAccess.csproj", "{A6976D52-EC96-4C85-B98B-54CBAC93A9BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace Digipolis.DataAccess.Repositories
+namespace DataAccess.Repositories
 {
     public abstract class RepositoryBase<TContext> : IRepositoryInjection where TContext : DbContext
     {

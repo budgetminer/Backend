@@ -1,26 +1,29 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using BM2.Business.Base;
 using BM2.Business.Readers;
 using BM2.Business.Writers;
 using BM2.DataAccess.Entities;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace BM2.Controllers
 {
     [Route("[controller]")]
-    public class LevelsController : ControllerBase<Level>
+    public class HeadCountsController : ControllerBase<HeadCount>
     {
-        public LevelsController(ILevelReader reader, ILevelWriter writer) : base(reader, writer)
+        public HeadCountsController(IHeadCountReader reader, IHeadCountWriter writer) : base(reader, writer)
         {
         }
 
-        [ProducesResponseType(typeof(Level), 200)]
+        [ProducesResponseType(typeof(HeadCount), 200)]
         public override Task<IActionResult> Get(int id)
         {
             return base.Get(id);
         }
 
-        [ProducesResponseType(typeof(List<Level>), 200)]
+        [ProducesResponseType(typeof(List<HeadCount>), 200)]
         public override Task<IActionResult> GetAll()
         {
             return base.GetAll();
