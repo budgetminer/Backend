@@ -4,7 +4,6 @@ using DataAccess.Uow;
 using DataAccess.Repositories;
 using DataAccess.Paging;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace DataAccess

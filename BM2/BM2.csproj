@@ -6,13 +6,13 @@
 
   <ItemGroup>
     <Compile Remove="DataAccess\Models\**" />
+    <Compile Remove="wwwroot\**" />
     <Content Remove="DataAccess\Models\**" />
+    <Content Remove="wwwroot\**" />
     <EmbeddedResource Remove="DataAccess\Models\**" />
+    <EmbeddedResource Remove="wwwroot\**" />
     <None Remove="DataAccess\Models\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <None Remove="wwwroot\**" />
   </ItemGroup>
 
   <ItemGroup>

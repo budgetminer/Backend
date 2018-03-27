@@ -12,8 +12,13 @@ namespace BM2
     {
         public static IServiceCollection AddBusinessServices(this IServiceCollection services)
         {
+            //readers & writers
             services.AddTransient<ICustomerReader, CustomerReader>();
             services.AddTransient<ICustomerWriter, CustomerWriter>();
+            services.AddTransient<ITeamReader, TeamReader>();
+            services.AddTransient<IHeadCountReader, HeadCountReader>();
+            services.AddTransient<ITeamWriter, TeamWriter>();
+            services.AddTransient<IHeadCountWriter, HeadCountWriter>();
 
             //Data Access Services
             services.AddScoped<IUnitOfWork, UnitOfWork>();
