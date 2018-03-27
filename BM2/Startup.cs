@@ -7,6 +7,7 @@ using BM2.DataAccess;
 using Swashbuckle.Swagger.Model;
 using Microsoft.Extensions.PlatformAbstractions;
 using BM2.Options;
+using Digipolis.DataAccess;
 
 namespace BM2
 {
@@ -23,12 +24,12 @@ namespace BM2
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddDbContext<EntityContext>(options => options.UseSqlServer(connectionLocal));
 
             //services
             services.AddBusinessServices();
             services.AddAutoMapper();
-
+            services.AddDataAccess<EntityContext>();
+            services.AddDbContext<EntityContext>(options => options.UseSqlServer(connectionLocal));
 
             services.AddMvc();
 
