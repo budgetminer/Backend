@@ -32,6 +32,7 @@ namespace BM2
             services.AddDbContext<EntityContext>(options => options.UseSqlServer(connectionLocal));
 
             services.AddCors();
+            services.AddMvc();
             services.AddSwaggerGen(c =>
             {
                 c.SingleApiVersion(new Info
