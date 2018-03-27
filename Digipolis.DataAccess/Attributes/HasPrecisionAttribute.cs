@@ -1,6 +1,6 @@
 using System;
 
-namespace Digipolis.DataAccess.Attributes
+namespace DataAccess.Attributes
 {
 	[AttributeUsage(AttributeTargets.Property, Inherited = false, AllowMultiple = false)]
 	public sealed class HasPrecisionAttribute : Attribute

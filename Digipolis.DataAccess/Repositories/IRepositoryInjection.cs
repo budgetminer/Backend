@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Digipolis.DataAccess.Repositories
+namespace DataAccess.Repositories
 {
     public interface IRepositoryInjection
     {

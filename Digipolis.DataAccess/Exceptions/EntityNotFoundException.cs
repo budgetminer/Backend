@@ -1,6 +1,6 @@
 using System;
 
-namespace Digipolis.DataAccess.Exceptions
+namespace DataAccess.Exceptions
 {
     public class EntityNotFoundException : Exception
     {

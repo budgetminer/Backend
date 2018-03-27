@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace Digipolis.DataAccess.Query
+namespace DataAccess.Query
 {
     public class ReplaceExpressionVisitor : ExpressionVisitor
 	{

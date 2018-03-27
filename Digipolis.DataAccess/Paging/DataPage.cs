@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Digipolis.DataAccess.Entities;
+using DataAccess.Entities;
 
-namespace Digipolis.DataAccess.Paging
+namespace DataAccess.Paging
 {
     public class DataPage<TEntity>
     {

@@ -1,5 +1,5 @@
-﻿using Digipolis.DataAccess;
-using Digipolis.DataAccess.Entities;
+﻿using DataAccess;
+using DataAccess.Entities;
 using System;
 using System.Threading.Tasks;
 

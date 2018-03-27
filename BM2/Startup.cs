@@ -7,7 +7,7 @@ using BM2.DataAccess;
 using Swashbuckle.Swagger.Model;
 using Microsoft.Extensions.PlatformAbstractions;
 using BM2.Options;
-using Digipolis.DataAccess;
+using DataAccess;
 
 namespace BM2
 {

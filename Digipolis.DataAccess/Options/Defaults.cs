@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 
-namespace Digipolis.DataAccess.Options
+namespace DataAccess.Options
 {
     public class Defaults
     {

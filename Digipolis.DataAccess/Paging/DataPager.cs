@@ -1,11 +1,11 @@
-﻿using Digipolis.DataAccess.Entities;
-using Digipolis.DataAccess.Query;
+﻿using DataAccess.Entities;
+using DataAccess.Query;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Digipolis.DataAccess.Paging
+namespace DataAccess.Paging
 {
     public class DataPager<TEntity> : IDataPager<TEntity>
     {

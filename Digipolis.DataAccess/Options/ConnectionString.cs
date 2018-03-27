@@ -1,8 +1,8 @@
-﻿using Digipolis.DataAccess.Options;
+﻿using DataAccess.Options;
 using System;
 using System.Reflection;
 
-namespace Digipolis.DataAccess
+namespace DataAccess
 {
     public class ConnectionString
     {

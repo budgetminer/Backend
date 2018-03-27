@@ -1,5 +1,5 @@
 ﻿using BM2.DataAccess.Entities;
-using Digipolis.DataAccess.Context;
+using DataAccess.Context;
 using Microsoft.EntityFrameworkCore;
 
 namespace BM2.DataAccess {

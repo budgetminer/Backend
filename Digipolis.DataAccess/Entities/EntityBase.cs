@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Digipolis.DataAccess.Entities
+namespace DataAccess.Entities
 {
     public class EntityBase
     {

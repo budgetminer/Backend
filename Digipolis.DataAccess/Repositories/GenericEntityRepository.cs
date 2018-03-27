@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using Digipolis.DataAccess.Entities;
+using DataAccess.Entities;
 
-namespace Digipolis.DataAccess.Repositories
+namespace DataAccess.Repositories
 {
     public class GenericEntityRepository<TEntity> : EntityRepositoryBase<DbContext, TEntity> where TEntity : EntityBase, new()
     {

@@ -1,10 +1,10 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Digipolis.DataAccess.Entities;
-using Digipolis.DataAccess.Repositories;
+using DataAccess.Entities;
+using DataAccess.Repositories;
 
-namespace Digipolis.DataAccess.Uow
+namespace DataAccess.Uow
 {
     public interface IUnitOfWorkBase : IDisposable
     {

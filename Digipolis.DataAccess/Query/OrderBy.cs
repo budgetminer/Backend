@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using Digipolis.DataAccess.Entities;
+using DataAccess.Entities;
 
-namespace Digipolis.DataAccess.Query
+namespace DataAccess.Query
 {
     public class OrderBy<TEntity>
 	{

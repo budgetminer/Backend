@@ -1,11 +1,11 @@
-﻿using Digipolis.DataAccess.Entities;
+﻿using DataAccess.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace Digipolis.DataAccess.Repositories
+namespace DataAccess.Repositories
 {
     public interface IRepository<TEntity>
 	{

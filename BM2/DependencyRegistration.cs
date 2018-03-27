@@ -1,10 +1,8 @@
-﻿using BM2.Business;
-using BM2.Business.Base;
-using BM2.Business.Readers;
+﻿using BM2.Business.Readers;
 using BM2.Business.Writers;
 using BM2.DataAccess;
-using Digipolis.DataAccess;
-using Digipolis.DataAccess.Uow;
+using DataAccess;
+using DataAccess.Uow;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 

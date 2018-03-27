@@ -3,7 +3,7 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace Digipolis.DataAccess.Context
+namespace DataAccess.Context
 {
     public static class ModelBuilderExtensions
     {

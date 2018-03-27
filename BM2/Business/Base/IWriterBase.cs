@@ -1,4 +1,4 @@
-﻿using Digipolis.DataAccess.Entities;
+﻿using DataAccess.Entities;
 using System.Threading.Tasks;
 
 namespace BM2.Business.Base

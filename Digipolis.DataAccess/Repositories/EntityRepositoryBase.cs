@@ -1,5 +1,5 @@
-﻿using Digipolis.DataAccess.Entities;
-using Digipolis.DataAccess.Query;
+﻿using DataAccess.Entities;
+using DataAccess.Query;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace Digipolis.DataAccess.Repositories
+namespace DataAccess.Repositories
 {
     public abstract class EntityRepositoryBase<TContext, TEntity> : RepositoryBase<TContext>, IRepository<TEntity> where TContext : DbContext where TEntity : EntityBase, new()
 	{

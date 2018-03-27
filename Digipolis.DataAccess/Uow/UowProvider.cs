@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.Extensions.Logging;
-using Digipolis.DataAccess.Context;
+using DataAccess.Context;
 using Microsoft.EntityFrameworkCore;
 
-namespace Digipolis.DataAccess.Uow
+namespace DataAccess.Uow
 {
     public class UowProvider : IUowProvider
     {
