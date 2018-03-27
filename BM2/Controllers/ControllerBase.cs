@@ -97,7 +97,7 @@ namespace BM2.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Update a certain entity given the updated model and the id.
         /// </summary>
         /// <param name="model"></param>
         /// <param name="id"></param>

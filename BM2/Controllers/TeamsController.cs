@@ -11,88 +11,25 @@ using System.Threading.Tasks;
 namespace BM2.Controllers
 {
     [Route("[controller]")]
-    public class TeamsController : Controller
+    public class TeamsController : ControllerBase<Team>
     {
         private ITeamReader reader;
         private ITeamWriter writer;
 
-        public TeamsController(ITeamReader reader, ITeamWriter writer)
+        public TeamsController(ITeamReader reader, ITeamWriter writer) : base(reader, writer)
         {
-            this.reader = reader ?? throw new ArgumentNullException(nameof(reader));
-            this.writer = writer ?? throw new ArgumentNullException(nameof(writer));
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetAll()
+        [ProducesResponseType(typeof(Team), 200)]
+        public override Task<IActionResult> Get(int id)
         {
-            var result = await reader.GetAll();
-            return Ok(result);
+            return base.Get(id);
         }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> Get(int id)
+        [ProducesResponseType(typeof(List<Team>), 200)]
+        public override Task<IActionResult> GetAll()
         {
-            var result = await reader.Get(id);
-            return Ok(result);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Post([FromBody]Team model)
-        {
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    await writer.Add(model);
-                    return Created("Get", new { id = model.Id });
-                }
-                catch (Exception ex)
-                {
-                    return BadRequest(new BusinessException("Er ging iets mis met het opslaan van de gegevens..", ex.StackTrace));
-                }
-            }
-            else
-            {
-                return BadRequest(new ModelMappingException());
-            }
-        }
-
-        [HttpPut]
-        public async Task<IActionResult> Put([FromBody]Team model, int id)
-        {
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    return await AddOrUpdateEntity(model, id);
-                }
-                catch (Exception ex)
-                {
-                    return BadRequest(new BusinessException("Er ging iets mee met het updaten van de gegevens..", ex.StackTrace));
-                }
-            }
-            else
-            {
-                return BadRequest(new ModelMappingException());
-            }
-        }
-
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
-        {
-            await writer.Delete(id);
-            return NoContent();
-        }
-
-        private async Task<IActionResult> AddOrUpdateEntity(Team model, int id)
-        {
-            if (id == 0)
-            {
-                await writer.Add(model);
-                return Created("Get", new { id = model.Id });
-            }
-            await writer.Update(model, id);
-            return NoContent();
+            return base.GetAll();
         }
     }
 }
