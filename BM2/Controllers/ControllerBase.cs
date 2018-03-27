@@ -26,7 +26,6 @@ namespace BM2.Controllers
         /// </summary>
         /// <returns></returns>
         [Produces("application/json")]
-        [ProducesResponseType(200)]
         [ProducesResponseType(typeof(BusinessException), 400)]
         [HttpGet]
         public virtual async Task<IActionResult> GetAll()
@@ -46,7 +45,6 @@ namespace BM2.Controllers
         /// </summary>
         /// <param name="id">The id</param>
         /// <returns></returns>
-        [ProducesResponseType(200)]
         [ProducesResponseType(404)]
         [ProducesResponseType(typeof(BusinessException), 400)]
         [HttpGet("{id}")]
@@ -75,7 +73,7 @@ namespace BM2.Controllers
         /// </summary>
         /// <param name="model">The according model</param>
         /// <returns></returns>
-        [ProducesResponseType(200)]
+        [ProducesResponseType(201)]
         [ProducesResponseType(typeof(BusinessException), 400)]
         [HttpPost]
         public virtual async Task<IActionResult> Post([FromBody]T model)
@@ -104,7 +102,7 @@ namespace BM2.Controllers
         /// <param name="model"></param>
         /// <param name="id"></param>
         /// <returns></returns>
-        [ProducesResponseType(200)]
+        [ProducesResponseType(201)]
         [ProducesResponseType(204)]
         [ProducesResponseType(typeof(BusinessException), 400)]
         [HttpPut]
