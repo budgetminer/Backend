@@ -12,7 +12,7 @@ namespace DataAccess.Repositories
 {
     public abstract class EntityRepositoryBase<TContext, TEntity> : RepositoryBase<TContext>, IRepository<TEntity> where TContext : DbContext where TEntity : EntityBase, new()
 	{
-		private readonly OrderBy<TEntity> DefaultOrderBy = new OrderBy<TEntity>(qry => qry.OrderBy(e => e.Id));
+		private readonly OrderByFilter<TEntity> DefaultOrderBy = new OrderByFilter<TEntity>(qry => qry.OrderBy(e => e.Id));
 
 		protected EntityRepositoryBase(ILogger<DataAccess> logger, TContext context) : base(logger, context)
 		{ }

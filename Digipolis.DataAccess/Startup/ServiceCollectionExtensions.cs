@@ -2,7 +2,6 @@
 using DataAccess.Context;
 using DataAccess.Uow;
 using DataAccess.Repositories;
-using DataAccess.Paging;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
@@ -21,7 +20,6 @@ namespace DataAccess
             services.TryAddSingleton<IUowProvider, UowProvider>();
             services.TryAddTransient<IEntityContext, TEntityContext>();
             services.TryAddTransient(typeof(IRepository<>), typeof(GenericEntityRepository<>));
-            services.TryAddTransient(typeof(IDataPager<>), typeof(DataPager<>));
         }
 
         private static void ValidateMandatoryField(string field, string fieldName)

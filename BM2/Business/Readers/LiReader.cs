@@ -25,7 +25,7 @@ namespace BM2.Business.Readers
             {
                 var repo = uow.GetRepository<License>();
 
-                var filter = new Filter<License>(null);
+                var filter = new WhereFilter<License>(null);
                 var includes = new Includes<License>(query =>
                 {
                     query.Include(x => x.lity);

@@ -7,14 +7,14 @@ using DataAccess.Entities;
 
 namespace DataAccess.Query
 {
-    public class OrderBy<TEntity>
+    public class OrderByFilter<TEntity>
 	{
-		public OrderBy(Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> expression)
+		public OrderByFilter(Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> expression)
 		{
 			Expression = expression;
 		}
 
-        public OrderBy(string columName, bool reverse)
+        public OrderByFilter(string columName, bool reverse)
         {
             Expression = GetOrderBy(columName, reverse);
         }

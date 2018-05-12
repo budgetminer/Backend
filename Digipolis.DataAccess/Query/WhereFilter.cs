@@ -4,9 +4,9 @@ using DataAccess.Entities;
 
 namespace DataAccess.Query
 {
-	public class Filter<TEntity>
+	public class WhereFilter<TEntity>
 	{
-		public Filter(Expression<Func<TEntity, bool>> expression)
+		public WhereFilter(Expression<Func<TEntity, bool>> expression)
 		{
 			Expression = expression;
 		}
