@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BM2.Business.Writers
 {
-    public interface ILicoWriter : IWriterBase<Lico>
+    public interface ILicoWriter : IWriterBase<LicenseCost>
     {
     }
 }

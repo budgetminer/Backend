@@ -10,11 +10,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BM2.Business.Readers
 {
-    public class LiReader : ReaderBase<License>, ILiReader
+    public class LicenseReader : ReaderBase<License>, ILiReader
     {
         private IUowProvider uowProvider;
 
-        public LiReader(IUowProvider uowProvider ) : base(uowProvider)
+        public LicenseReader(IUowProvider uowProvider ) : base(uowProvider)
         {
             this.uowProvider = uowProvider ?? throw new ArgumentNullException(nameof(uowProvider));
         }
@@ -28,11 +28,11 @@ namespace BM2.Business.Readers
                 var filter = new WhereFilter<License>(null);
                 var includes = new Includes<License>(query =>
                 {
-                    query.Include(x => x.lity);
-                    query.Include(x => x.cu);
+                    query.Include(x => x.LicenseType);
+                    query.Include(x => x.Customer);
                     return query;
                 });
-                filter.AddExpression(l => l.cu.Id == custId && l.lity.abbrev == licType);
+                filter.AddExpression(l => l.Customer.Id == custId && l.LicenseType.Abbreviation == licType);
 
                 return (await repo.QueryAsync(filter.Expression, includes: includes.Expression)).ToList();
             }

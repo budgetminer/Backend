@@ -8,7 +8,7 @@ using BM2.Business.Base;
 
 namespace BM2.Business.Readers
 {
-    public class LicoReader : ReaderBase<Lico>, ILicoReader
+    public class LicoReader : ReaderBase<LicenseCost>, ILicoReader
     {
         private IUowProvider uowProvider;
 

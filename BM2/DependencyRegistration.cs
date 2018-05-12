@@ -28,7 +28,7 @@ namespace BM2
 
             services.AddTransient<ICotyReader, CotyReader>();
             services.AddTransient<ICuReader, CuReader>();
-            services.AddTransient<ILiReader, LiReader>();
+            services.AddTransient<ILiReader, LicenseReader>();
             services.AddTransient<ILicoReader, LicoReader>();
             services.AddTransient<ILityReader, LityReader>();
 

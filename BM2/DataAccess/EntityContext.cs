@@ -16,7 +16,7 @@ namespace BM2.DataAccess {
         public DbSet<CostType> Cotys { get; set; }
         public DbSet<Cu> Cus { get; set; }
         public DbSet<License> Lis { get; set; }
-        public DbSet<Lico> Licos { get; set; }
+        public DbSet<LicenseCost> Licos { get; set; }
         public DbSet<LicenseType> Litys { get; set; }
         
         protected override void OnConfiguring(DbContextOptionsBuilder builder) {

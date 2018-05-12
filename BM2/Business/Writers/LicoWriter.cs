@@ -8,7 +8,7 @@ using DataAccess;
 
 namespace BM2.Business.Writers
 {
-    public class LicoWriter : WriterBase<Lico>, ILicoWriter
+    public class LicoWriter : WriterBase<LicenseCost>, ILicoWriter
     {
 
         public LicoWriter(IUowProvider uowProvider) : base(uowProvider)
