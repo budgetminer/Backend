@@ -20,17 +20,17 @@ namespace BM2
             services.AddTransient<ITeamWriter, TeamWriter>();
             services.AddTransient<IHeadCountWriter, HeadCountWriter>();
         
-            services.AddTransient<ICotyWriter, CotyWriter>();
+            services.AddTransient<ICotyWriter, CostTypeWriter>();
             services.AddTransient<ICuWriter, CuWriter>();
-            services.AddTransient<ILiWriter, LiWriter>();
-            services.AddTransient<ILicoWriter, LicoWriter>();
-            services.AddTransient<ILityWriter, LityWriter>();
+            services.AddTransient<ILicenseWriter, LicenseWriter>();
+            services.AddTransient<ILicenseCostWriter, LicenseCostWriter>();
+            services.AddTransient<ILicenseTypeWriter, LicenseTypeWriter>();
 
-            services.AddTransient<ICotyReader, CotyReader>();
+            services.AddTransient<ICostTypeReader, CostTypeReader>();
             services.AddTransient<ICuReader, CuReader>();
-            services.AddTransient<ILiReader, LicenseReader>();
-            services.AddTransient<ILicoReader, LicoReader>();
-            services.AddTransient<ILityReader, LityReader>();
+            services.AddTransient<ILicenseReader, LicenseReader>();
+            services.AddTransient<ILicenseCostReader, LicenseCostReader>();
+            services.AddTransient<ILicenseTypeReader, LityReader>();
 
             services.AddTransient<ILevelsReader, LevelsReader>();
             services.AddTransient<ILevelsWriter, LevelsWriter>();

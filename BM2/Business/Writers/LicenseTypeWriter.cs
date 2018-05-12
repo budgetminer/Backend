@@ -8,10 +8,10 @@ using DataAccess;
 
 namespace BM2.Business.Writers
 {
-    public class CotyWriter : WriterBase<CostType>, ICotyWriter
+    public class LicenseTypeWriter : WriterBase<LicenseType>, ILicenseTypeWriter
     {
 
-        public CotyWriter(IUowProvider uowProvider) : base(uowProvider)
+        public LicenseTypeWriter(IUowProvider uowProvider) : base(uowProvider)
         {
         }
     }

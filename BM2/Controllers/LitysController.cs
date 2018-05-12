@@ -11,7 +11,7 @@ namespace BM2.Controllers
     [Route("[controller]")]
     public class LitysController : ControllerBase<LicenseType>
     {
-        public LitysController(ILityReader reader, ILityWriter writer) : base(reader, writer)
+        public LitysController(ILicenseTypeReader reader, ILicenseTypeWriter writer) : base(reader, writer)
         {
         }
 

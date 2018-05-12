@@ -8,11 +8,11 @@ using BM2.Business.Base;
 
 namespace BM2.Business.Readers
 {
-    public class LicoReader : ReaderBase<LicenseCost>, ILicoReader
+    public class LicenseCostReader : ReaderBase<LicenseCost>, ILicenseCostReader
     {
         private IUowProvider uowProvider;
 
-        public LicoReader(IUowProvider uowProvider ) : base(uowProvider)
+        public LicenseCostReader(IUowProvider uowProvider ) : base(uowProvider)
         {
             this.uowProvider = uowProvider ?? throw new ArgumentNullException(nameof(uowProvider));
         }

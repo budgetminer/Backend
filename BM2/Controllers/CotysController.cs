@@ -11,7 +11,7 @@ namespace BM2.Controllers
     [Route("[controller]")]
     public class CotysController : ControllerBase<CostType>
     {
-        public CotysController(ICotyReader reader, ICotyWriter writer) : base(reader, writer)
+        public CotysController(ICostTypeReader reader, ICotyWriter writer) : base(reader, writer)
         {
         }
 

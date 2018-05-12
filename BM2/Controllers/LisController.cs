@@ -11,9 +11,9 @@ namespace BM2.Controllers
     [Route("[controller]")]
     public class LicenseController : ControllerBase<License>
     {
-        private ILiReader _reader;
+        private ILicenseReader _reader;
 
-        public LicenseController(ILiReader reader, ILiWriter writer) : base(reader, writer)
+        public LicenseController(ILicenseReader reader, ILicenseWriter writer) : base(reader, writer)
         {
             _reader = reader;
         }

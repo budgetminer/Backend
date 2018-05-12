@@ -11,7 +11,7 @@ namespace BM2.Controllers
     [Route("[controller]")]
     public class LicosController : ControllerBase<LicenseCost>
     {
-        public LicosController(ILicoReader reader, ILicoWriter writer) : base(reader, writer)
+        public LicosController(ILicenseCostReader reader, ILicenseCostWriter writer) : base(reader, writer)
         {
         }
 
