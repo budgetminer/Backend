@@ -4,7 +4,7 @@ using DataAccess;
 
 namespace BM2.Business.Readers {
     public class LevelsReader : ReaderBase<Level>, ILevelsReader {
-        public LevelsReader(IUnitOfWork uow) : base(uow) {
+        public LevelsReader(IUowProvider uowProvider) : base(uowProvider) {
 
         }
     }

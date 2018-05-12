@@ -8,13 +8,13 @@ using BM2.Business.Base;
 
 namespace BM2.Business.Readers
 {
-    public class CotyReader : ReaderBase<Coty>, ICotyReader
+    public class CotyReader : ReaderBase<CostType>, ICotyReader
     {
-        private IUnitOfWork uow;
+        private IUowProvider uowProvider;
 
-        public CotyReader(IUnitOfWork uow ) : base(uow)
+        public CotyReader(IUowProvider uowProvider ) : base(uowProvider)
         {
-            this.uow = uow ?? throw new ArgumentNullException(nameof(uow));
+            this.uowProvider = uowProvider ?? throw new ArgumentNullException(nameof(uowProvider));
         }
     }
 }

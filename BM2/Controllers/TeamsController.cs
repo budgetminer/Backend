@@ -13,8 +13,6 @@ namespace BM2.Controllers
     [Route("[controller]")]
     public class TeamsController : ControllerBase<Team>
     {
-        private ITeamReader reader;
-        private ITeamWriter writer;
 
         public TeamsController(ITeamReader reader, ITeamWriter writer) : base(reader, writer)
         {

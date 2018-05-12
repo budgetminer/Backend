@@ -6,7 +6,7 @@ namespace BM2.Business.Readers
 {
     public class LevelReader : ReaderBase<Level>, ILevelReader
     {
-        public LevelReader(IUnitOfWork uow) : base(uow)
+        public LevelReader(IUowProvider uowProvider) : base(uowProvider)
         {
         }
     }

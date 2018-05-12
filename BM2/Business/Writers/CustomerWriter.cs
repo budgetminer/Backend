@@ -11,7 +11,7 @@ namespace BM2.Business.Writers
     public class CustomerWriter : WriterBase<Customer>, ICustomerWriter
     {
 
-        public CustomerWriter(IUnitOfWork unitOfWork) : base(unitOfWork)
+        public CustomerWriter(IUowProvider uowProvider) : base(uowProvider)
         {
         }
     }

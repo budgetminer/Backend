@@ -10,11 +10,11 @@ namespace BM2.Business.Readers
 {
     public class CuReader : ReaderBase<Cu>, ICuReader
     {
-        private IUnitOfWork uow;
+        private IUowProvider uowProvider;
 
-        public CuReader(IUnitOfWork uow ) : base(uow)
+        public CuReader(IUowProvider uowProvider ) : base(uowProvider)
         {
-            this.uow = uow ?? throw new ArgumentNullException(nameof(uow));
+            this.uowProvider = uowProvider ?? throw new ArgumentNullException(nameof(uowProvider));
         }
     }
 }

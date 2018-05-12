@@ -10,11 +10,11 @@ namespace BM2.Business.Readers
 {
     public class LicoReader : ReaderBase<Lico>, ILicoReader
     {
-        private IUnitOfWork uow;
+        private IUowProvider uowProvider;
 
-        public LicoReader(IUnitOfWork uow ) : base(uow)
+        public LicoReader(IUowProvider uowProvider ) : base(uowProvider)
         {
-            this.uow = uow ?? throw new ArgumentNullException(nameof(uow));
+            this.uowProvider = uowProvider ?? throw new ArgumentNullException(nameof(uowProvider));
         }
     }
 }

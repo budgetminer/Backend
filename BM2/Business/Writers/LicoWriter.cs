@@ -11,7 +11,7 @@ namespace BM2.Business.Writers
     public class LicoWriter : WriterBase<Lico>, ILicoWriter
     {
 
-        public LicoWriter(IUnitOfWork unitOfWork) : base(unitOfWork)
+        public LicoWriter(IUowProvider uowProvider) : base(uowProvider)
         {
         }
     }

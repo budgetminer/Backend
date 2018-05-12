@@ -5,22 +5,37 @@ using System.Threading.Tasks;
 using BM2.DataAccess.Entities;
 using System.Linq;
 using BM2.Business.Base;
+using DataAccess.Query;
+using Microsoft.EntityFrameworkCore;
 
 namespace BM2.Business.Readers
 {
-    public class LiReader : ReaderBase<Li>, ILiReader
+    public class LiReader : ReaderBase<License>, ILiReader
     {
-        private IUnitOfWork uow;
+        private IUowProvider uowProvider;
 
-        public LiReader(IUnitOfWork uow ) : base(uow)
+        public LiReader(IUowProvider uowProvider ) : base(uowProvider)
         {
-            this.uow = uow ?? throw new ArgumentNullException(nameof(uow));
+            this.uowProvider = uowProvider ?? throw new ArgumentNullException(nameof(uowProvider));
         }
 
-        public List<Li> GetByLiTypeCustomer(int custId, string licType) {
-            var result = uow.GetRepository<Li>();
+        public async Task<List<License>> GetByLiTypeCustomer(int custId, string licType)
+        {
+            using (var uow = uowProvider.CreateUnitOfWork())
+            {
+                var repo = uow.GetRepository<License>();
 
-            result.QueryAsync(l => )
+                var filter = new Filter<License>(null);
+                var includes = new Includes<License>(query =>
+                {
+                    query.Include(x => x.lity);
+                    query.Include(x => x.cu);
+                    return query;
+                });
+                filter.AddExpression(l => l.cu.Id == custId && l.lity.abbrev == licType);
+
+                return (await repo.QueryAsync(filter.Expression, includes: includes.Expression)).ToList();
+            }
         }
     }
 }

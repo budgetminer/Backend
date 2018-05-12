@@ -10,25 +10,31 @@ namespace BM2.Business.Base
 {
     public abstract class ReaderBase<T> : IReaderBase<T> where T : EntityBase, new()
     {
-        private IUnitOfWork uow;
+        private IUowProvider _uowProvider;
 
-        public ReaderBase(IUnitOfWork uow)
+        public ReaderBase(IUowProvider uowProvider)
         {
-            this.uow = uow ?? throw new ArgumentNullException(nameof(uow));
+            this._uowProvider = uowProvider ?? throw new ArgumentNullException(nameof(uowProvider));
         }
 
         public virtual async Task<T> Get(int id)
         {
-            var repo = uow.GetRepository<T>();
-            var result = await repo.GetAsync(id);
-            return result;
+            using (var uow = _uowProvider.CreateUnitOfWork())
+            {
+                var repo = uow.GetRepository<T>();
+                var result = await repo.GetAsync(id);
+                return result;
+            }
         }
 
         public virtual async Task<List<T>> GetAll()
         {
-            var repo = uow.GetRepository<T>();
-            var result = await repo.GetAllAsync();
-            return result.ToList();
+            using (var uow = _uowProvider.CreateUnitOfWork())
+            {
+                var repo = uow.GetRepository<T>();
+                var result = await repo.GetAllAsync();
+                return result.ToList();
+            }
         }
     }
 }

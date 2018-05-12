@@ -10,7 +10,7 @@ namespace BM2.Business.Writers
 {
     public class LevelWriter : WriterBase<Level>, ILevelWriter
     {
-        public LevelWriter(IUnitOfWork uow) : base(uow)
+        public LevelWriter(IUowProvider uowProvider) : base(uowProvider)
         {
         }
     }

@@ -6,7 +6,7 @@ namespace BM2.Business.Readers
 {
     public class HeadCountReader : ReaderBase<HeadCount>, IHeadCountReader
     {
-        public HeadCountReader(IUnitOfWork uow) : base(uow)
+        public HeadCountReader(IUowProvider uowProvider) : base(uowProvider)
         {
         }
     }

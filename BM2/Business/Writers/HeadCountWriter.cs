@@ -6,7 +6,7 @@ namespace BM2.Business.Writers
 {
     public class HeadCountWriter : WriterBase<HeadCount>, IHeadCountWriter
     {
-        public HeadCountWriter(IUnitOfWork uow) : base(uow)
+        public HeadCountWriter(IUowProvider uowProvider) : base(uowProvider)
         {
         }
     }

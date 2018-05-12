@@ -3,7 +3,7 @@ using BM2.DataAccess.Entities;
 
 namespace BM2.Business.Readers
 {
-    public interface ICotyReader : IReaderBase<Coty>
+    public interface ILityReader : IReaderBase<LicenseType>
     {
     }
 }

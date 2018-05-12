@@ -11,7 +11,7 @@ namespace BM2.Business.Writers
     public class CuWriter : WriterBase<Cu>, ICuWriter
     {
 
-        public CuWriter(IUnitOfWork unitOfWork) : base(unitOfWork)
+        public CuWriter(IUowProvider uowProvider) : base(uowProvider)
         {
         }
     }

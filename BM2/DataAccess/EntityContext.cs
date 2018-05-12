@@ -13,11 +13,11 @@ namespace BM2.DataAccess {
         public DbSet<Customer> Customers{ get; set; }
         public DbSet<Level> Levels{ get; set; }
         public DbSet<HeadCount> Headcounts { get; set; }
-        public DbSet<Coty> Cotys { get; set; }
+        public DbSet<CostType> Cotys { get; set; }
         public DbSet<Cu> Cus { get; set; }
-        public DbSet<Li> Lis { get; set; }
+        public DbSet<License> Lis { get; set; }
         public DbSet<Lico> Licos { get; set; }
-        public DbSet<Lity> Litys { get; set; }
+        public DbSet<LicenseType> Litys { get; set; }
         
         protected override void OnConfiguring(DbContextOptionsBuilder builder) {
             if (!builder.IsConfigured) {

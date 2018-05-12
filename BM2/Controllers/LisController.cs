@@ -6,28 +6,34 @@ using Microsoft.AspNetCore.Routing;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace BM2.Controllers {
+namespace BM2.Controllers
+{
     [Route("[controller]")]
-    public class LisController : ControllerBase<Li> {
+    public class LicenseController : ControllerBase<License>
+    {
         private ILiReader _reader;
 
-        public LisController(ILiReader reader, ILiWriter writer) : base(reader, writer) {
+        public LicenseController(ILiReader reader, ILiWriter writer) : base(reader, writer)
+        {
             _reader = reader;
         }
 
-        [ProducesResponseType(typeof(Li), 200)]
-        public override Task<IActionResult> Get(int id) {
+        [ProducesResponseType(typeof(License), 200)]
+        public override Task<IActionResult> Get(int id)
+        {
             return base.Get(id);
         }
 
-        [ProducesResponseType(typeof(List<Li>), 200)]
-        public override Task<IActionResult> GetAll() {
+        [ProducesResponseType(typeof(List<License>), 200)]
+        public override Task<IActionResult> GetAll()
+        {
             return base.GetAll();
         }
 
-        public Task<IActionResult> GetByLiTypeCustomer(int custId, string licType) {
-            var result = _reader.GetByLiTypeCustomer(custId, licType);
-            return result;
+        public async Task<IActionResult> GetByLiTypeCustomer(int custId, string licType)
+        {
+            var result = await _reader.GetByLiTypeCustomer(custId, licType);
+            return Ok(result);
         }
     }
 }

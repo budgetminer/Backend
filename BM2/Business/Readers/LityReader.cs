@@ -8,13 +8,13 @@ using BM2.Business.Base;
 
 namespace BM2.Business.Readers
 {
-    public class LityReader : ReaderBase<Lity>, ILityReader
+    public class LityReader : ReaderBase<LicenseType>, ILityReader
     {
-        private IUnitOfWork uow;
+        private IUowProvider uowProvider;
 
-        public LityReader(IUnitOfWork uow ) : base(uow)
+        public LityReader(IUowProvider uowProvider ) : base(uowProvider)
         {
-            this.uow = uow ?? throw new ArgumentNullException(nameof(uow));
+            this.uowProvider = uowProvider ?? throw new ArgumentNullException(nameof(uowProvider));
         }
     }
 }

@@ -5,8 +5,8 @@ namespace BM2.DataAccess.Entities
 {
     public class HeadCount : EntityBase
     {
-        public string hcBudgetowner { get; set; }
-        [Required] public string hcYear { get; set; }
+        public string Budgetowner { get; set; }
+        [Required] public string Year { get; set; }
         public string hcNofte { get; set; }
         public string hcFtegr { get; set; }
         public string HcFtecost { get; set; }

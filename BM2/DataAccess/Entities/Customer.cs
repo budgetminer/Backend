@@ -9,7 +9,7 @@ namespace BM2.DataAccess.Entities
 {
     public class Customer : EntityBase
     {
-        [Required] public string cuName { get; set; }
+        [Required] public string Name { get; set; }
         //List<Team> Teams { get; set; }
     }
 }
