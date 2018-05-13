@@ -9,19 +9,19 @@ using System.Threading.Tasks;
 namespace BM2.Controllers
 {
     [Route("[controller]")]
-    public class CusController : ControllerBase<Cu>
+    public class CostTypesController : ControllerBase<CostType>
     {
-        public CusController(ICuReader reader, ICuWriter writer) : base(reader, writer)
+        public CostTypesController(ICostTypeReader reader, ICotyWriter writer) : base(reader, writer)
         {
         }
 
-        [ProducesResponseType(typeof(Cu), 200)]
+        [ProducesResponseType(typeof(CostType), 200)]
         public override Task<IActionResult> Get(int id)
         {
             return base.Get(id);
         }
 
-        [ProducesResponseType(typeof(List<Cu>), 200)]
+        [ProducesResponseType(typeof(List<CostType>), 200)]
         public override Task<IActionResult> GetAll()
         {
             return base.GetAll();

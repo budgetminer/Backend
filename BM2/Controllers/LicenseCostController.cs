@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 namespace BM2.Controllers
 {
     [Route("[controller]")]
-    public class LicosController : ControllerBase<LicenseCost>
+    public class LicenseCostController : ControllerBase<LicenseCost>
     {
-        public LicosController(ILicenseCostReader reader, ILicenseCostWriter writer) : base(reader, writer)
+        public LicenseCostController(ILicenseCostReader reader, ILicenseCostWriter writer) : base(reader, writer)
         {
         }
 
