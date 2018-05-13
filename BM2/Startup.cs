@@ -18,7 +18,7 @@ namespace BM2
 
         public IConfiguration Configuration { get; }
 
-        private const string connectionLocal = @"Server=(localdb)\mssqllocaldb;Database=Budgetminer;Trusted_Connection=True;";
+        private const string connectionLocal = @"Server=(localdb)\mssqllocaldb;Database=BM;Trusted_Connection=True;";
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
