@@ -1,17 +1,21 @@
-﻿using DataAccess.Entities;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
-namespace BM2.DataAccess.Entities
+namespace BM2
 {
-    public class Team : EntityBase
+    public partial class Team
     {
-        [Required] public string tmName { get; set; }
-        public string tmLocation { get; set; }
-        public string tmMission { get; set; }
-        public string tmBudgetowner { get; set; }
+        public Team()
+        {
+            Activity = new HashSet<Activity>();
+            Individual = new HashSet<Individual>();
+        }
 
-        public Customer Customer { get; set; }
-        public List<Level> Levels { get; set; }
+        public decimal Id { get; set; }
+        public string Name { get; set; }
+        public string Comments { get; set; }
+
+        public ICollection<Activity> Activity { get; set; }
+        public ICollection<Individual> Individual { get; set; }
     }
 }

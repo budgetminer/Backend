@@ -3,14 +3,12 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
-using BM2.DataAccess;
 using Swashbuckle.Swagger.Model;
 using Microsoft.Extensions.PlatformAbstractions;
 using BM2.Options;
 using DataAccess;
 
-namespace BM2
-{
+namespace BM2 {
     public class Startup {
         public Startup(IConfiguration configuration) {
             Configuration = configuration;
@@ -28,8 +26,8 @@ namespace BM2
             //services
             services.AddBusinessServices();
             services.AddAutoMapper();
-            services.AddDataAccess<EntityContext>();
-            services.AddDbContext<EntityContext>(options => options.UseSqlServer(connectionLocal));
+            services.AddDataAccess<BMContext>();
+            services.AddDbContext<BMContext>(options => options.UseSqlServer(connectionLocal));
 
             services.AddCors();
             services.AddMvc();

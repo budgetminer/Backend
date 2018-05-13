@@ -4,17 +4,16 @@ using System.Collections.Generic;
 
 namespace BM2
 {
-    public partial class Customer : EntityBase
+    public partial class Department : EntityBase
     {
-        public Customer()
+        public Department()
         {
-            Component = new HashSet<Component>();
             Individual = new HashSet<Individual>();
         }
 
-        public string Name { get; set; }
+        public string Short { get; set; }
+        public string Description { get; set; }
 
-        public ICollection<Component> Component { get; set; }
         public ICollection<Individual> Individual { get; set; }
     }
 }

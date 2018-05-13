@@ -1,15 +1,10 @@
-﻿using BM2.Business.Exceptions;
-using BM2.Business.Readers;
+﻿using BM2.Business.Readers;
 using BM2.Business.Writers;
-using BM2.DataAccess.Entities;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
-namespace BM2.Controllers
-{
+namespace BM2.Controllers {
     [Route("[controller]")]
     public class TeamsController : ControllerBase<Team>
     {
