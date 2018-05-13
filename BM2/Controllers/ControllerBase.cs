@@ -11,8 +11,8 @@ namespace BM2.Controllers
 {
     public abstract class ControllerBase<T> : Controller where T : EntityBase
     {
-        private IReaderBase<T> reader;
-        private IWriterBase<T> writer;
+        protected IReaderBase<T> reader;
+        protected IWriterBase<T> writer;
 
 
         public ControllerBase(IReaderBase<T> reader, IWriterBase<T> writer)

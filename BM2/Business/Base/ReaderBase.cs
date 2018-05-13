@@ -10,11 +10,11 @@ namespace BM2.Business.Base
 {
     public abstract class ReaderBase<T> : IReaderBase<T> where T : EntityBase, new()
     {
-        private IUowProvider _uowProvider;
+        protected IUowProvider _uowProvider;
 
         public ReaderBase(IUowProvider uowProvider)
         {
-            this._uowProvider = uowProvider ?? throw new ArgumentNullException(nameof(uowProvider));
+            _uowProvider = uowProvider ?? throw new ArgumentNullException(nameof(uowProvider));
         }
 
         public virtual async Task<T> Get(int id)

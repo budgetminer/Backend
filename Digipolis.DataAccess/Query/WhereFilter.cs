@@ -11,6 +11,7 @@ namespace DataAccess.Query
 			Expression = expression;
 		}
 
+
 		public Expression<Func<TEntity, bool>> Expression { get; private set; }
 
 		public void AddExpression(Expression<Func<TEntity, bool>> newExpression)
