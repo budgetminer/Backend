@@ -67,6 +67,12 @@ namespace BM2
                     .HasForeignKey(d => d.TeamId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("activity_team_fk");
+
+                entity.HasOne(a => a.ActivityGroup)
+                    .WithMany(ag => ag.Activities)
+                    .HasForeignKey(a => a.ActivityGroupId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("activity_activitygroup_fk");
             });
 
             modelBuilder.Entity<ActivityCosts>(entity =>
@@ -369,7 +375,7 @@ namespace BM2
                     .HasMaxLength(30)
                     .IsUnicode(false);
 
-                entity.Property(e => e.PartsgroupId)
+                entity.Property(e => e.PartsGroupId)
                     .HasColumnName("partsgroup_id")
                     .HasColumnType("numeric(28, 0)");
 
@@ -397,9 +403,15 @@ namespace BM2
 
                 entity.HasOne(d => d.Partsgroup)
                     .WithMany(p => p.Part)
-                    .HasForeignKey(d => d.PartsgroupId)
+                    .HasForeignKey(d => d.PartsGroupId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("part_partsgroup_fk");
+
+                entity.HasOne(p => p.PartType)
+                    .WithMany(pt => pt.Parts)
+                    .HasForeignKey(p => p.PartTypeId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("part_partstype_fk");
             });
 
             modelBuilder.Entity<PartsGroup>(entity =>

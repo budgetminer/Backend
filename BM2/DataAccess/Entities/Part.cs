@@ -16,8 +16,9 @@ namespace BM2
         public string ContractNumber { get; set; }
         public DateTime? ContractExpiryDate { get; set; }
         public string Comments { get; set; }
-        public int PartsgroupId { get; set; }
+        public int PartsGroupId { get; set; }
         public int IndividualId { get; set; }
+        public int PartTypeId { get; set; }
         public decimal? Units { get; set; }
         public DateTime? Renawaldate { get; set; }
         public decimal? Yearlyincrease { get; set; }
@@ -26,5 +27,6 @@ namespace BM2
         public Individual Individual { get; set; }
         public PartsGroup Partsgroup { get; set; }
         public ICollection<Costs> Costs { get; set; }
+        public PartType PartType { get; set; }
     }
 }

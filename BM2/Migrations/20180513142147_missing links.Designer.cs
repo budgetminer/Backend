@@ -11,9 +11,10 @@ using System;
 namespace BM2.Migrations
 {
     [DbContext(typeof(BMContext))]
-    partial class BMContextModelSnapshot : ModelSnapshot
+    [Migration("20180513142147_missing links")]
+    partial class missinglinks
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
