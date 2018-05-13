@@ -1,9 +1,10 @@
-﻿using System;
+﻿using DataAccess.Entities;
+using System;
 using System.Collections.Generic;
 
 namespace BM2
 {
-    public partial class Team
+    public partial class Team : EntityBase
     {
         public Team()
         {
@@ -11,7 +12,6 @@ namespace BM2
             Individual = new HashSet<Individual>();
         }
 
-        public decimal Id { get; set; }
         public string Name { get; set; }
         public string Comments { get; set; }
 

@@ -12,11 +12,11 @@ namespace BM2
             Part = new HashSet<Part>();
         }
 
-        public decimal DepartmentId { get; set; }
-        public decimal Id { get; set; }
+        public int DepartmentId { get; set; }
         public string Firstname { get; set; }
         public string Lastname { get; set; }
-        public decimal TeamId { get; set; }
+        public int TeamId { get; set; }
+        public int CustomerId { get; set; }
 
         public Customer Customer { get; set; }
         public Department Department { get; set; }

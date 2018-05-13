@@ -1,6 +1,5 @@
 ﻿using BM2.Business.Readers;
 using BM2.Business.Writers;
-using BM2.DataAccess.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using System.Collections.Generic;

@@ -1,21 +1,21 @@
-﻿using System;
+﻿using DataAccess.Entities;
+using System;
 using System.Collections.Generic;
 
 namespace BM2
 {
-    public partial class Stacklayer
+    public partial class Stacklayer : EntityBase
     {
         public Stacklayer()
         {
-            Activitygroup = new HashSet<Activitygroup>();
-            Partsgroup = new HashSet<Partsgroup>();
+            Activitygroup = new HashSet<ActivityGroup>();
+            Partsgroup = new HashSet<PartsGroup>();
         }
 
-        public decimal Id { get; set; }
         public string Short { get; set; }
         public string Description { get; set; }
 
-        public ICollection<Activitygroup> Activitygroup { get; set; }
-        public ICollection<Partsgroup> Partsgroup { get; set; }
+        public ICollection<ActivityGroup> Activitygroup { get; set; }
+        public ICollection<PartsGroup> Partsgroup { get; set; }
     }
 }

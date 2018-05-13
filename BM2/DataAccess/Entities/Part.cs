@@ -16,15 +16,15 @@ namespace BM2
         public string ContractNumber { get; set; }
         public DateTime? ContractExpiryDate { get; set; }
         public string Comments { get; set; }
-        public decimal PartsgroupId { get; set; }
-        public decimal IndividualId { get; set; }
+        public int PartsgroupId { get; set; }
+        public int IndividualId { get; set; }
         public decimal? Units { get; set; }
         public DateTime? Renawaldate { get; set; }
         public decimal? Yearlyincrease { get; set; }
         public string Metric { get; set; }
 
         public Individual Individual { get; set; }
-        public Partsgroup Partsgroup { get; set; }
+        public PartsGroup Partsgroup { get; set; }
         public ICollection<Costs> Costs { get; set; }
     }
 }

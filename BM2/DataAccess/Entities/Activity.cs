@@ -8,15 +8,15 @@ namespace BM2
     {
         public Activity()
         {
-            Activitycosts = new HashSet<Activitycosts>();
+            Activitycosts = new HashSet<ActivityCosts>();
         }
 
         public string Name { get; set; }
-        public decimal IndividualId { get; set; }
-        public decimal TeamId { get; set; }
+        public int IndividualId { get; set; }
+        public int TeamId { get; set; }
 
         public Individual Individual { get; set; }
         public Team Team { get; set; }
-        public ICollection<Activitycosts> Activitycosts { get; set; }
+        public ICollection<ActivityCosts> Activitycosts { get; set; }
     }
 }

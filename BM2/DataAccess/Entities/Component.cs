@@ -8,14 +8,14 @@ namespace BM2
     {
         public Component()
         {
-            Partsgroup = new HashSet<Partsgroup>();
+            Partsgroup = new HashSet<PartsGroup>();
         }
 
         public string Short { get; set; }
         public string Description { get; set; }
-        public decimal CustomerId { get; set; }
+        public int CustomerId { get; set; }
 
         public Customer Customer { get; set; }
-        public ICollection<Partsgroup> Partsgroup { get; set; }
+        public ICollection<PartsGroup> Partsgroup { get; set; }
     }
 }

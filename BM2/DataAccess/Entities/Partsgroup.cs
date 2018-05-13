@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 namespace BM2
 {
-    public partial class Partsgroup : EntityBase
+    public partial class PartsGroup : EntityBase
     {
-        public Partsgroup()
+        public PartsGroup()
         {
             Part = new HashSet<Part>();
         }

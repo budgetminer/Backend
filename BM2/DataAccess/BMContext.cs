@@ -11,17 +11,17 @@ namespace BM2
         }
 
         public virtual DbSet<Activity> Activities { get; set; }
-        public virtual DbSet<Activitycosts> ActivityCosts { get; set; }
-        public virtual DbSet<Activitygroup> ActivityGroups { get; set; }
+        public virtual DbSet<ActivityCosts> ActivityCosts { get; set; }
+        public virtual DbSet<ActivityGroup> ActivityGroups { get; set; }
         public virtual DbSet<Component> Components { get; set; }
         public virtual DbSet<Costs> Costs { get; set; }
-        public virtual DbSet<Costtype> CostTypes { get; set; }
+        public virtual DbSet<CostType> CostTypes { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Department> Departmens { get; set; }
         public virtual DbSet<Individual> Individuals { get; set; }
         public virtual DbSet<Part> Parts { get; set; }
-        public virtual DbSet<Partsgroup> PartsGroups { get; set; }
-        public virtual DbSet<Parttype> PartTypes { get; set; }
+        public virtual DbSet<PartsGroup> PartsGroups { get; set; }
+        public virtual DbSet<PartType> PartTypes { get; set; }
         public virtual DbSet<Stacklayer> StackLayers { get; set; }
         public virtual DbSet<Team> Teams { get; set; }
 
@@ -69,7 +69,7 @@ namespace BM2
                     .HasConstraintName("activity_team_fk");
             });
 
-            modelBuilder.Entity<Activitycosts>(entity =>
+            modelBuilder.Entity<ActivityCosts>(entity =>
             {
                 entity.ToTable("activitycosts");
 
@@ -119,7 +119,7 @@ namespace BM2
                     .HasConstraintName("activitycosts_costtype_fk");
             });
 
-            modelBuilder.Entity<Activitygroup>(entity =>
+            modelBuilder.Entity<ActivityGroup>(entity =>
             {
                 entity.ToTable("activitygroup");
 
@@ -227,7 +227,7 @@ namespace BM2
                     .HasConstraintName("costs_part_fk");
             });
 
-            modelBuilder.Entity<Costtype>(entity =>
+            modelBuilder.Entity<CostType>(entity =>
             {
                 entity.ToTable("costtype");
 
@@ -402,7 +402,7 @@ namespace BM2
                     .HasConstraintName("part_partsgroup_fk");
             });
 
-            modelBuilder.Entity<Partsgroup>(entity =>
+            modelBuilder.Entity<PartsGroup>(entity =>
             {
                 entity.ToTable("partsgroup");
 
@@ -441,7 +441,7 @@ namespace BM2
                     .HasConstraintName("partsgroup_stacklayer_fk");
             });
 
-            modelBuilder.Entity<Parttype>(entity =>
+            modelBuilder.Entity<PartType>(entity =>
             {
                 entity.ToTable("parttype");
 
