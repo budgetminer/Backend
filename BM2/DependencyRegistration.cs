@@ -15,25 +15,23 @@ namespace BM2
             //readers & writers
             services.AddTransient<ICustomerReader, CustomerReader>();
             services.AddTransient<ICustomerWriter, CustomerWriter>();
-            services.AddTransient<ITeamReader, TeamReader>();
-            services.AddTransient<IHeadCountReader, HeadCountReader>();
+
             services.AddTransient<ITeamWriter, TeamWriter>();
+            services.AddTransient<ITeamReader, TeamReader>();
+
+            services.AddTransient<IHeadCountReader, HeadCountReader>();
             services.AddTransient<IHeadCountWriter, HeadCountWriter>();
         
-            services.AddTransient<ICotyWriter, CotyWriter>();
-            services.AddTransient<ICuWriter, CuWriter>();
-            services.AddTransient<ILiWriter, LiWriter>();
-            services.AddTransient<ILicoWriter, LicoWriter>();
-            services.AddTransient<ILityWriter, LityWriter>();
+            services.AddTransient<ICotyWriter, CostTypeWriter>();
+            services.AddTransient<ILicenseWriter, LicenseWriter>();
+            services.AddTransient<ILicenseCostWriter, LicenseCostWriter>();
+            services.AddTransient<ILicenseTypeWriter, LicenseTypeWriter>();
 
-            services.AddTransient<ICotyReader, CotyReader>();
-            services.AddTransient<ICuReader, CuReader>();
-            services.AddTransient<ILiReader, LicenseReader>();
-            services.AddTransient<ILicoReader, LicoReader>();
-            services.AddTransient<ILityReader, LityReader>();
+            services.AddTransient<ICostTypeReader, CostTypeReader>();
+            services.AddTransient<ILicenseReader, LicenseReader>();
+            services.AddTransient<ILicenseCostReader, LicenseCostReader>();
+            services.AddTransient<ILicenseTypeReader, LityReader>();
 
-            services.AddTransient<ILevelsReader, LevelsReader>();
-            services.AddTransient<ILevelsWriter, LevelsWriter>();
 
             services.AddTransient<ITeamReader, TeamReader>();
             services.AddTransient<ITeamWriter, TeamWriter>();

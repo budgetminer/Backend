@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BM2.Business.Writers
 {
-    public interface ICuWriter : IWriterBase<Cu>
+    public interface ILicenseTypeWriter : IWriterBase<LicenseType>
     {
     }
 }

@@ -8,10 +8,10 @@ using DataAccess;
 
 namespace BM2.Business.Writers
 {
-    public class LiWriter : WriterBase<License>, ILiWriter
+    public class LicenseWriter : WriterBase<License>, ILicenseWriter
     {
 
-        public LiWriter(IUowProvider uowProvider) : base(uowProvider)
+        public LicenseWriter(IUowProvider uowProvider) : base(uowProvider)
         {
         }
     }

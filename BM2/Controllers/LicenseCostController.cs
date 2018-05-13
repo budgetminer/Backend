@@ -9,19 +9,19 @@ using System.Threading.Tasks;
 namespace BM2.Controllers
 {
     [Route("[controller]")]
-    public class CotysController : ControllerBase<CostType>
+    public class LicenseCostController : ControllerBase<LicenseCost>
     {
-        public CotysController(ICotyReader reader, ICotyWriter writer) : base(reader, writer)
+        public LicenseCostController(ILicenseCostReader reader, ILicenseCostWriter writer) : base(reader, writer)
         {
         }
 
-        [ProducesResponseType(typeof(CostType), 200)]
+        [ProducesResponseType(typeof(LicenseCost), 200)]
         public override Task<IActionResult> Get(int id)
         {
             return base.Get(id);
         }
 
-        [ProducesResponseType(typeof(List<CostType>), 200)]
+        [ProducesResponseType(typeof(List<LicenseCost>), 200)]
         public override Task<IActionResult> GetAll()
         {
             return base.GetAll();

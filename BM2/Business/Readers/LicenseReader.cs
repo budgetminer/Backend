@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BM2.Business.Readers
 {
-    public class LicenseReader : ReaderBase<License>, ILiReader
+    public class LicenseReader : ReaderBase<License>, ILicenseReader
     {
         private IUowProvider uowProvider;
 

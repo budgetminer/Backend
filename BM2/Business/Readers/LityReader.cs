@@ -8,7 +8,7 @@ using BM2.Business.Base;
 
 namespace BM2.Business.Readers
 {
-    public class LityReader : ReaderBase<LicenseType>, ILityReader
+    public class LityReader : ReaderBase<LicenseType>, ILicenseTypeReader
     {
         private IUowProvider uowProvider;
 
