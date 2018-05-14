@@ -15,13 +15,6 @@ namespace BM2.DataAccess
             
         }
 
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            builder.HasDefaultSchema("main");
-
-            base.OnModelCreating(builder);
-        }
-
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Customer> Customers { get; set; }
     }
