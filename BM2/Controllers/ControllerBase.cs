@@ -3,8 +3,6 @@ using BM2.Business.Exceptions;
 using DataAccess.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace BM2.Controllers
@@ -45,7 +43,7 @@ namespace BM2.Controllers
         /// </summary>
         /// <param name="id">The id</param>
         /// <returns></returns>
-        [ProducesResponseType(404)]
+        [ProducesResponseType(typeof(NotFoundException), 404)]
         [ProducesResponseType(typeof(BusinessException), 400)]
         [HttpGet("{id}")]
         public virtual async Task<IActionResult> Get(int id)
@@ -157,8 +155,6 @@ namespace BM2.Controllers
                 return BadRequest(new BusinessException($"Error deleting {nameof(T)}", ex.StackTrace));
             }
         }
-
-
 
         private IActionResult ErrorRetrieving(string stacktrace)
         {

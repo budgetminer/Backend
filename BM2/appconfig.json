@@ -1,0 +1,9 @@
+﻿{
+  "JwtIssuerOptions": {
+    "Issuer": "budgetminer",
+    "Audience": "http://localhost:5000/"
+  },
+  "Dataaccess": {
+
+  }
+}

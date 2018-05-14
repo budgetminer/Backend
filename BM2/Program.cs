@@ -17,9 +17,33 @@ namespace BM2
             BuildWebHost(args).Run();
         }
 
-        public static IWebHost BuildWebHost(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
+        public static IWebHost BuildWebHost(string[] args)
+        {
+            var configuration = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
                 .Build();
+
+            var envVars = Environment.GetEnvironmentVariables();
+
+
+            return WebHost.CreateDefaultBuilder(args)
+                .UseStartup<Startup>()
+                .UseDefaultServiceProvider(options => options.ValidateScopes = false)
+                .ConfigureAppConfiguration((hostingContext, config) =>
+                {
+                    // delete all default configuration providers
+                    config.Sources.Clear();
+
+                    var env = hostingContext.HostingEnvironment;
+                    var configPath = Path.Combine(env.ContentRootPath);
+
+                    config.SetBasePath(configPath);
+                    config.AddJsonFile("appconfig.json");
+
+                    config.AddEnvironmentVariables();
+                })
+                .UseConfiguration(configuration)
+                .Build();
+        }
     }
 }

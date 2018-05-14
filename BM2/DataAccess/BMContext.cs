@@ -35,6 +35,8 @@ namespace BM2
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.HasDefaultSchema("miner");
+
             modelBuilder.Entity<Activity>(entity =>
             {
                 entity.ToTable("activity");

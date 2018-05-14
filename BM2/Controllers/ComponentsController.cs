@@ -21,6 +21,11 @@ namespace BM2.Controllers
             _writer = writer ?? throw new ArgumentNullException(nameof(writer));
         }
 
+        /// <summary>
+        /// Returns the components for a specific customer
+        /// </summary>
+        /// <param name="customerId"></param>
+        /// <returns></returns>
         [HttpGet("customer/{customerId:int}")]
         public Task<IActionResult> GetComponentsForCustomer(int customerId)
         {

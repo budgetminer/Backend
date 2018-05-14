@@ -1,0 +1,19 @@
+﻿using Microsoft.AspNetCore.Identity;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace BM2.DataAccess.IdentityEntities
+{
+    /// <summary>
+    /// Class to identify a customer
+    /// </summary>
+    public class AppUser : IdentityUser
+    {
+        /// <summary>
+        /// Name of the user
+        /// </summary>
+        public string UserName { get; set; }
+    }
+}

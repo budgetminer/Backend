@@ -28,8 +28,6 @@ namespace BM2 {
         {
             public EntitiesToModels()
             {
-                CreateMap(typeof(Team), typeof(TeamModel)).ReverseMap();
-                CreateMap(typeof(Customer), typeof(CustomerModel)).ReverseMap();
             }
         }
     }
