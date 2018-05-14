@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 using System.Collections.Generic;
 
-namespace BM2.Migrations.BM
+namespace BM2.Migrations
 {
-    public partial class initLogin : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -17,7 +17,7 @@ namespace BM2.Migrations.BM
                 schema: "main",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "numeric(28, 0)", nullable: false)
+                    id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     description = table.Column<string>(type: "varchar(250)", unicode: false, maxLength: 250, nullable: true),
                     @short = table.Column<string>(name: "short", type: "varchar(10)", unicode: false, maxLength: 10, nullable: false)
@@ -32,7 +32,7 @@ namespace BM2.Migrations.BM
                 schema: "main",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "numeric(28, 0)", nullable: false)
+                    id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     name = table.Column<string>(type: "varchar(30)", unicode: false, maxLength: 30, nullable: false)
                 },
@@ -46,7 +46,7 @@ namespace BM2.Migrations.BM
                 schema: "main",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "numeric(28, 0)", nullable: false)
+                    id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     description = table.Column<string>(type: "varchar(250)", unicode: false, maxLength: 250, nullable: true),
                     @short = table.Column<string>(name: "short", type: "varchar(10)", unicode: false, maxLength: 10, nullable: false)
@@ -61,7 +61,7 @@ namespace BM2.Migrations.BM
                 schema: "main",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "numeric(28, 0)", nullable: false)
+                    id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     description = table.Column<string>(type: "varchar(250)", unicode: false, maxLength: 250, nullable: true),
                     @short = table.Column<string>(name: "short", type: "varchar(10)", unicode: false, maxLength: 10, nullable: true)
@@ -76,7 +76,7 @@ namespace BM2.Migrations.BM
                 schema: "main",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "numeric(28, 0)", nullable: false)
+                    id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     description = table.Column<string>(type: "varchar(250)", unicode: false, maxLength: 250, nullable: true),
                     @short = table.Column<string>(name: "short", type: "varchar(10)", unicode: false, maxLength: 10, nullable: false)
@@ -91,7 +91,7 @@ namespace BM2.Migrations.BM
                 schema: "main",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "numeric(28, 0)", nullable: false)
+                    id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     comments = table.Column<string>(type: "varchar(500)", unicode: false, maxLength: 500, nullable: true),
                     name = table.Column<string>(type: "varchar(30)", unicode: false, maxLength: 30, nullable: true)
@@ -106,9 +106,9 @@ namespace BM2.Migrations.BM
                 schema: "main",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "numeric(28, 0)", nullable: false)
+                    id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    customer_id = table.Column<int>(type: "numeric(28, 0)", nullable: false),
+                    customer_id = table.Column<int>(type: "int", nullable: false),
                     description = table.Column<string>(type: "varchar(30)", unicode: false, maxLength: 30, nullable: true),
                     @short = table.Column<string>(name: "short", type: "varchar(10)", unicode: false, maxLength: 10, nullable: true)
                 },
@@ -129,11 +129,11 @@ namespace BM2.Migrations.BM
                 schema: "main",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "numeric(28, 0)", nullable: false)
+                    id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     comments = table.Column<string>(type: "varchar(500)", unicode: false, maxLength: 500, nullable: true),
                     groupname = table.Column<string>(type: "varchar(30)", unicode: false, maxLength: 30, nullable: true),
-                    stacklayer_id = table.Column<int>(type: "numeric(28, 0)", nullable: false)
+                    stacklayer_id = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -152,13 +152,13 @@ namespace BM2.Migrations.BM
                 schema: "main",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "numeric(28, 0)", nullable: false)
+                    id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    customer_id = table.Column<int>(type: "numeric(28, 0)", nullable: false),
-                    department_id = table.Column<int>(type: "numeric(28, 0)", nullable: false),
+                    customer_id = table.Column<int>(type: "int", nullable: false),
+                    department_id = table.Column<int>(type: "int", nullable: false),
                     firstname = table.Column<string>(type: "varchar(30)", unicode: false, maxLength: 30, nullable: false),
                     lastname = table.Column<string>(type: "varchar(30)", unicode: false, maxLength: 30, nullable: false),
-                    team_id = table.Column<int>(type: "numeric(28, 0)", nullable: false)
+                    team_id = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -191,12 +191,12 @@ namespace BM2.Migrations.BM
                 schema: "main",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "numeric(28, 0)", nullable: false)
+                    id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     comments = table.Column<string>(type: "varchar(500)", unicode: false, maxLength: 500, nullable: true),
-                    component_id = table.Column<int>(type: "numeric(28, 0)", nullable: false),
+                    component_id = table.Column<int>(type: "int", nullable: false),
                     groupname = table.Column<string>(type: "varchar(30)", unicode: false, maxLength: 30, nullable: true),
-                    stacklayer_id = table.Column<int>(type: "numeric(28, 0)", nullable: false)
+                    stacklayer_id = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -222,12 +222,12 @@ namespace BM2.Migrations.BM
                 schema: "main",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "numeric(28, 0)", nullable: false)
+                    id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    ActivityGroupId = table.Column<int>(type: "numeric(28, 0)", nullable: false),
-                    individual_id = table.Column<int>(type: "numeric(28, 0)", nullable: false),
+                    ActivityGroupId = table.Column<int>(type: "int", nullable: false),
+                    individual_id = table.Column<int>(type: "int", nullable: false),
                     name = table.Column<string>(type: "varchar(30)", unicode: false, maxLength: 30, nullable: true),
-                    team_id = table.Column<int>(type: "numeric(28, 0)", nullable: false)
+                    team_id = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -260,16 +260,16 @@ namespace BM2.Migrations.BM
                 schema: "main",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "numeric(28, 0)", nullable: false)
+                    id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     comments = table.Column<string>(type: "varchar(500)", unicode: false, maxLength: 500, nullable: true),
                     contractexpirydate = table.Column<DateTime>(type: "date", nullable: true),
                     contractno = table.Column<string>(type: "varchar(30)", unicode: false, maxLength: 30, nullable: true),
-                    individual_id = table.Column<int>(type: "numeric(28, 0)", nullable: false),
+                    individual_id = table.Column<int>(type: "int", nullable: false),
                     metric = table.Column<string>(type: "varchar(30)", unicode: false, maxLength: 30, nullable: true),
                     name = table.Column<string>(type: "varchar(30)", unicode: false, maxLength: 30, nullable: true),
-                    PartTypeId = table.Column<int>(type: "numeric(28, 0)", nullable: false),
-                    partsgroup_id = table.Column<int>(type: "numeric(28, 0)", nullable: false),
+                    PartTypeId = table.Column<int>(type: "int", nullable: false),
+                    partsgroup_id = table.Column<int>(type: "int", nullable: false),
                     renawaldate = table.Column<DateTime>(type: "date", nullable: true),
                     units = table.Column<decimal>(type: "numeric(28, 0)", nullable: true),
                     vendor = table.Column<decimal>(type: "numeric(28, 0)", nullable: true),
@@ -306,12 +306,12 @@ namespace BM2.Migrations.BM
                 schema: "main",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "numeric(28, 0)", nullable: false)
+                    id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    activity_id = table.Column<int>(type: "numeric(28, 0)", nullable: false),
+                    activity_id = table.Column<int>(type: "int", nullable: false),
                     comment = table.Column<string>(type: "varchar(500)", unicode: false, maxLength: 500, nullable: true),
                     cost = table.Column<decimal>(type: "decimal(28, 0)", nullable: true),
-                    costtype_id = table.Column<int>(type: "numeric(28, 0)", nullable: false),
+                    costtype_id = table.Column<int>(type: "int", nullable: false),
                     enddate = table.Column<DateTime>(type: "date", nullable: true),
                     period = table.Column<decimal>(type: "decimal(28, 0)", nullable: true),
                     startdate = table.Column<DateTime>(type: "date", nullable: true)
@@ -340,13 +340,13 @@ namespace BM2.Migrations.BM
                 schema: "main",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "numeric(28, 0)", nullable: false)
+                    id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     comment = table.Column<string>(type: "varchar(500)", unicode: false, maxLength: 500, nullable: true),
                     cost = table.Column<decimal>(type: "decimal(28, 0)", nullable: true),
-                    costtype_id = table.Column<int>(type: "numeric(28, 0)", nullable: false),
+                    costtype_id = table.Column<int>(type: "int", nullable: false),
                     enddate = table.Column<DateTime>(type: "date", nullable: true),
-                    part_id = table.Column<int>(type: "numeric(28, 0)", nullable: false),
+                    part_id = table.Column<int>(type: "int", nullable: false),
                     period = table.Column<decimal>(type: "decimal(28, 0)", nullable: true),
                     startdate = table.Column<DateTime>(type: "date", nullable: true)
                 },

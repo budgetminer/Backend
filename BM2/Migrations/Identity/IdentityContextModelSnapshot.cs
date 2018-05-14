@@ -8,13 +8,12 @@ using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
 using System;
 
-namespace BM2.Migrations
+namespace BM2.Migrations.Identity
 {
     [DbContext(typeof(IdentityContext))]
-    [Migration("20180514142325_initLogin")]
-    partial class initLogin
+    partial class IdentityContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

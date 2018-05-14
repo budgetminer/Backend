@@ -8,11 +8,11 @@ using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
 using System;
 
-namespace BM2.Migrations.BM
+namespace BM2.Migrations
 {
     [DbContext(typeof(BMContext))]
-    [Migration("20180514140703_initLogin")]
-    partial class initLogin
+    [Migration("20180514151049_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,14 +26,12 @@ namespace BM2.Migrations.BM
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("id")
-                        .HasColumnType("numeric(28, 0)");
+                        .HasColumnName("id");
 
                     b.Property<int>("ActivityGroupId");
 
                     b.Property<int>("IndividualId")
-                        .HasColumnName("individual_id")
-                        .HasColumnType("numeric(28, 0)");
+                        .HasColumnName("individual_id");
 
                     b.Property<string>("Name")
                         .HasColumnName("name")
@@ -41,8 +39,7 @@ namespace BM2.Migrations.BM
                         .IsUnicode(false);
 
                     b.Property<int>("TeamId")
-                        .HasColumnName("team_id")
-                        .HasColumnType("numeric(28, 0)");
+                        .HasColumnName("team_id");
 
                     b.HasKey("Id");
 
@@ -59,12 +56,10 @@ namespace BM2.Migrations.BM
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("id")
-                        .HasColumnType("numeric(28, 0)");
+                        .HasColumnName("id");
 
                     b.Property<int>("ActivityId")
-                        .HasColumnName("activity_id")
-                        .HasColumnType("numeric(28, 0)");
+                        .HasColumnName("activity_id");
 
                     b.Property<string>("Comment")
                         .HasColumnName("comment")
@@ -76,8 +71,7 @@ namespace BM2.Migrations.BM
                         .HasColumnType("decimal(28, 0)");
 
                     b.Property<int>("CosttypeId")
-                        .HasColumnName("costtype_id")
-                        .HasColumnType("numeric(28, 0)");
+                        .HasColumnName("costtype_id");
 
                     b.Property<DateTime?>("Enddate")
                         .HasColumnName("enddate")
@@ -104,8 +98,7 @@ namespace BM2.Migrations.BM
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("id")
-                        .HasColumnType("numeric(28, 0)");
+                        .HasColumnName("id");
 
                     b.Property<string>("Comments")
                         .HasColumnName("comments")
@@ -118,8 +111,7 @@ namespace BM2.Migrations.BM
                         .IsUnicode(false);
 
                     b.Property<int>("StacklayerId")
-                        .HasColumnName("stacklayer_id")
-                        .HasColumnType("numeric(28, 0)");
+                        .HasColumnName("stacklayer_id");
 
                     b.HasKey("Id");
 
@@ -132,12 +124,10 @@ namespace BM2.Migrations.BM
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("id")
-                        .HasColumnType("numeric(28, 0)");
+                        .HasColumnName("id");
 
                     b.Property<int>("CustomerId")
-                        .HasColumnName("customer_id")
-                        .HasColumnType("numeric(28, 0)");
+                        .HasColumnName("customer_id");
 
                     b.Property<string>("Description")
                         .HasColumnName("description")
@@ -160,8 +150,7 @@ namespace BM2.Migrations.BM
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("id")
-                        .HasColumnType("numeric(28, 0)");
+                        .HasColumnName("id");
 
                     b.Property<string>("Comment")
                         .HasColumnName("comment")
@@ -173,16 +162,14 @@ namespace BM2.Migrations.BM
                         .HasColumnType("decimal(28, 0)");
 
                     b.Property<int>("CosttypeId")
-                        .HasColumnName("costtype_id")
-                        .HasColumnType("numeric(28, 0)");
+                        .HasColumnName("costtype_id");
 
                     b.Property<DateTime?>("Enddate")
                         .HasColumnName("enddate")
                         .HasColumnType("date");
 
                     b.Property<int>("PartId")
-                        .HasColumnName("part_id")
-                        .HasColumnType("numeric(28, 0)");
+                        .HasColumnName("part_id");
 
                     b.Property<decimal?>("Period")
                         .HasColumnName("period")
@@ -205,8 +192,7 @@ namespace BM2.Migrations.BM
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("id")
-                        .HasColumnType("numeric(28, 0)");
+                        .HasColumnName("id");
 
                     b.Property<string>("Description")
                         .HasColumnName("description")
@@ -228,8 +214,7 @@ namespace BM2.Migrations.BM
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("id")
-                        .HasColumnType("numeric(28, 0)");
+                        .HasColumnName("id");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -246,8 +231,7 @@ namespace BM2.Migrations.BM
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("id")
-                        .HasColumnType("numeric(28, 0)");
+                        .HasColumnName("id");
 
                     b.Property<string>("Description")
                         .HasColumnName("description")
@@ -269,16 +253,13 @@ namespace BM2.Migrations.BM
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("id")
-                        .HasColumnType("numeric(28, 0)");
+                        .HasColumnName("id");
 
                     b.Property<int>("CustomerId")
-                        .HasColumnName("customer_id")
-                        .HasColumnType("numeric(28, 0)");
+                        .HasColumnName("customer_id");
 
                     b.Property<int>("DepartmentId")
-                        .HasColumnName("department_id")
-                        .HasColumnType("numeric(28, 0)");
+                        .HasColumnName("department_id");
 
                     b.Property<string>("Firstname")
                         .IsRequired()
@@ -293,8 +274,7 @@ namespace BM2.Migrations.BM
                         .IsUnicode(false);
 
                     b.Property<int>("TeamId")
-                        .HasColumnName("team_id")
-                        .HasColumnType("numeric(28, 0)");
+                        .HasColumnName("team_id");
 
                     b.HasKey("Id");
 
@@ -311,8 +291,7 @@ namespace BM2.Migrations.BM
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("id")
-                        .HasColumnType("numeric(28, 0)");
+                        .HasColumnName("id");
 
                     b.Property<string>("Comments")
                         .HasColumnName("comments")
@@ -329,8 +308,7 @@ namespace BM2.Migrations.BM
                         .IsUnicode(false);
 
                     b.Property<int>("IndividualId")
-                        .HasColumnName("individual_id")
-                        .HasColumnType("numeric(28, 0)");
+                        .HasColumnName("individual_id");
 
                     b.Property<string>("Metric")
                         .HasColumnName("metric")
@@ -345,8 +323,7 @@ namespace BM2.Migrations.BM
                     b.Property<int>("PartTypeId");
 
                     b.Property<int>("PartsGroupId")
-                        .HasColumnName("partsgroup_id")
-                        .HasColumnType("numeric(28, 0)");
+                        .HasColumnName("partsgroup_id");
 
                     b.Property<DateTime?>("Renawaldate")
                         .HasColumnName("renawaldate")
@@ -379,8 +356,7 @@ namespace BM2.Migrations.BM
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("id")
-                        .HasColumnType("numeric(28, 0)");
+                        .HasColumnName("id");
 
                     b.Property<string>("Comments")
                         .HasColumnName("comments")
@@ -388,8 +364,7 @@ namespace BM2.Migrations.BM
                         .IsUnicode(false);
 
                     b.Property<int>("ComponentId")
-                        .HasColumnName("component_id")
-                        .HasColumnType("numeric(28, 0)");
+                        .HasColumnName("component_id");
 
                     b.Property<string>("Groupname")
                         .HasColumnName("groupname")
@@ -397,8 +372,7 @@ namespace BM2.Migrations.BM
                         .IsUnicode(false);
 
                     b.Property<int>("StacklayerId")
-                        .HasColumnName("stacklayer_id")
-                        .HasColumnType("numeric(28, 0)");
+                        .HasColumnName("stacklayer_id");
 
                     b.HasKey("Id");
 
@@ -413,8 +387,7 @@ namespace BM2.Migrations.BM
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("id")
-                        .HasColumnType("numeric(28, 0)");
+                        .HasColumnName("id");
 
                     b.Property<string>("Description")
                         .HasColumnName("description")
@@ -435,8 +408,7 @@ namespace BM2.Migrations.BM
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("id")
-                        .HasColumnType("numeric(28, 0)");
+                        .HasColumnName("id");
 
                     b.Property<string>("Description")
                         .HasColumnName("description")
@@ -458,8 +430,7 @@ namespace BM2.Migrations.BM
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("id")
-                        .HasColumnType("numeric(28, 0)");
+                        .HasColumnName("id");
 
                     b.Property<string>("Comments")
                         .HasColumnName("comments")

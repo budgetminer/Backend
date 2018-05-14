@@ -36,12 +36,10 @@ namespace BM2
                 entity.ToTable("activity");
 
                 entity.Property(e => e.Id)
-                    .HasColumnName("id")
-                    .HasColumnType("numeric(28, 0)");
+                    .HasColumnName("id");
 
                 entity.Property(e => e.IndividualId)
-                    .HasColumnName("individual_id")
-                    .HasColumnType("numeric(28, 0)");
+                    .HasColumnName("individual_id");
 
                 entity.Property(e => e.Name)
                     .HasColumnName("name")
@@ -49,8 +47,7 @@ namespace BM2
                     .IsUnicode(false);
 
                 entity.Property(e => e.TeamId)
-                    .HasColumnName("team_id")
-                    .HasColumnType("numeric(28, 0)");
+                    .HasColumnName("team_id");
 
                 entity.HasOne(d => d.Individual)
                     .WithMany(p => p.Activities)
@@ -76,12 +73,10 @@ namespace BM2
                 entity.ToTable("activitycosts");
 
                 entity.Property(e => e.Id)
-                    .HasColumnName("id")
-                    .HasColumnType("numeric(28, 0)");
+                    .HasColumnName("id");
 
                 entity.Property(e => e.ActivityId)
-                    .HasColumnName("activity_id")
-                    .HasColumnType("numeric(28, 0)");
+                    .HasColumnName("activity_id");
 
                 entity.Property(e => e.Comment)
                     .HasColumnName("comment")
@@ -93,8 +88,7 @@ namespace BM2
                     .HasColumnType("decimal(28, 0)");
 
                 entity.Property(e => e.CosttypeId)
-                    .HasColumnName("costtype_id")
-                    .HasColumnType("numeric(28, 0)");
+                    .HasColumnName("costtype_id");
 
                 entity.Property(e => e.Enddate)
                     .HasColumnName("enddate")
@@ -126,8 +120,7 @@ namespace BM2
                 entity.ToTable("activitygroup");
 
                 entity.Property(e => e.Id)
-                    .HasColumnName("id")
-                    .HasColumnType("numeric(28, 0)");
+                    .HasColumnName("id");
 
                 entity.Property(e => e.Comments)
                     .HasColumnName("comments")
@@ -140,8 +133,7 @@ namespace BM2
                     .IsUnicode(false);
 
                 entity.Property(e => e.StacklayerId)
-                    .HasColumnName("stacklayer_id")
-                    .HasColumnType("numeric(28, 0)");
+                    .HasColumnName("stacklayer_id");
 
                 entity.HasOne(d => d.Stacklayer)
                     .WithMany(p => p.ActivityGroups)
@@ -155,12 +147,10 @@ namespace BM2
                 entity.ToTable("component");
 
                 entity.Property(e => e.Id)
-                    .HasColumnName("id")
-                    .HasColumnType("numeric(28, 0)");
+                    .HasColumnName("id");
 
                 entity.Property(e => e.CustomerId)
-                    .HasColumnName("customer_id")
-                    .HasColumnType("numeric(28, 0)");
+                    .HasColumnName("customer_id");
 
                 entity.Property(e => e.Description)
                     .HasColumnName("description")
@@ -184,8 +174,7 @@ namespace BM2
                 entity.ToTable("costs");
 
                 entity.Property(e => e.Id)
-                    .HasColumnName("id")
-                    .HasColumnType("numeric(28, 0)");
+                    .HasColumnName("id");
 
                 entity.Property(e => e.Comment)
                     .HasColumnName("comment")
@@ -197,16 +186,14 @@ namespace BM2
                     .HasColumnType("decimal(28, 0)");
 
                 entity.Property(e => e.CosttypeId)
-                    .HasColumnName("costtype_id")
-                    .HasColumnType("numeric(28, 0)");
+                    .HasColumnName("costtype_id");
 
                 entity.Property(e => e.Enddate)
                     .HasColumnName("enddate")
                     .HasColumnType("date");
 
                 entity.Property(e => e.PartId)
-                    .HasColumnName("part_id")
-                    .HasColumnType("numeric(28, 0)");
+                    .HasColumnName("part_id");
 
                 entity.Property(e => e.Period)
                     .HasColumnName("period")
@@ -234,8 +221,7 @@ namespace BM2
                 entity.ToTable("costtype");
 
                 entity.Property(e => e.Id)
-                    .HasColumnName("id")
-                    .HasColumnType("numeric(28, 0)");
+                    .HasColumnName("id");
 
                 entity.Property(e => e.Description)
                     .HasColumnName("description")
@@ -254,8 +240,7 @@ namespace BM2
                 entity.ToTable("customer");
 
                 entity.Property(e => e.Id)
-                    .HasColumnName("id")
-                    .HasColumnType("numeric(28, 0)");
+                    .HasColumnName("id");
 
                 entity.Property(e => e.Name)
                     .IsRequired()
@@ -269,8 +254,7 @@ namespace BM2
                 entity.ToTable("department");
 
                 entity.Property(e => e.Id)
-                    .HasColumnName("id")
-                    .HasColumnType("numeric(28, 0)");
+                    .HasColumnName("id");
 
                 entity.Property(e => e.Description)
                     .HasColumnName("description")
@@ -289,16 +273,13 @@ namespace BM2
                 entity.ToTable("individual");
 
                 entity.Property(e => e.Id)
-                    .HasColumnName("id")
-                    .HasColumnType("numeric(28, 0)");
+                    .HasColumnName("id");
 
                 entity.Property(e => e.CustomerId)
-                    .HasColumnName("customer_id")
-                    .HasColumnType("numeric(28, 0)");
+                    .HasColumnName("customer_id");
 
                 entity.Property(e => e.DepartmentId)
-                    .HasColumnName("department_id")
-                    .HasColumnType("numeric(28, 0)");
+                    .HasColumnName("department_id");
 
                 entity.Property(e => e.Firstname)
                     .IsRequired()
@@ -313,8 +294,7 @@ namespace BM2
                     .IsUnicode(false);
 
                 entity.Property(e => e.TeamId)
-                    .HasColumnName("team_id")
-                    .HasColumnType("numeric(28, 0)");
+                    .HasColumnName("team_id");
 
                 entity.HasOne(d => d.Customer)
                     .WithMany(p => p.Individuals)
@@ -340,8 +320,7 @@ namespace BM2
                 entity.ToTable("part");
 
                 entity.Property(e => e.Id)
-                    .HasColumnName("id")
-                    .HasColumnType("numeric(28, 0)");
+                    .HasColumnName("id");
 
                 entity.Property(e => e.Comments)
                     .HasColumnName("comments")
@@ -358,8 +337,7 @@ namespace BM2
                     .IsUnicode(false);
 
                 entity.Property(e => e.IndividualId)
-                    .HasColumnName("individual_id")
-                    .HasColumnType("numeric(28, 0)");
+                    .HasColumnName("individual_id");
 
                 entity.Property(e => e.Metric)
                     .HasColumnName("metric")
@@ -372,8 +350,7 @@ namespace BM2
                     .IsUnicode(false);
 
                 entity.Property(e => e.PartsGroupId)
-                    .HasColumnName("partsgroup_id")
-                    .HasColumnType("numeric(28, 0)");
+                    .HasColumnName("partsgroup_id");
 
                 entity.Property(e => e.Renawaldate)
                     .HasColumnName("renawaldate")
@@ -415,8 +392,7 @@ namespace BM2
                 entity.ToTable("partsgroup");
 
                 entity.Property(e => e.Id)
-                    .HasColumnName("id")
-                    .HasColumnType("numeric(28, 0)");
+                    .HasColumnName("id");
 
                 entity.Property(e => e.Comments)
                     .HasColumnName("comments")
@@ -424,8 +400,7 @@ namespace BM2
                     .IsUnicode(false);
 
                 entity.Property(e => e.ComponentId)
-                    .HasColumnName("component_id")
-                    .HasColumnType("numeric(28, 0)");
+                    .HasColumnName("component_id");
 
                 entity.Property(e => e.Groupname)
                     .HasColumnName("groupname")
@@ -433,8 +408,7 @@ namespace BM2
                     .IsUnicode(false);
 
                 entity.Property(e => e.StacklayerId)
-                    .HasColumnName("stacklayer_id")
-                    .HasColumnType("numeric(28, 0)");
+                    .HasColumnName("stacklayer_id");
 
                 entity.HasOne(d => d.Component)
                     .WithMany(p => p.PartsGroups)
@@ -454,8 +428,7 @@ namespace BM2
                 entity.ToTable("parttype");
 
                 entity.Property(e => e.Id)
-                    .HasColumnName("id")
-                    .HasColumnType("numeric(28, 0)");
+                    .HasColumnName("id");
 
                 entity.Property(e => e.Description)
                     .HasColumnName("description")
@@ -473,8 +446,7 @@ namespace BM2
                 entity.ToTable("stacklayer");
 
                 entity.Property(e => e.Id)
-                    .HasColumnName("id")
-                    .HasColumnType("numeric(28, 0)");
+                    .HasColumnName("id");
 
                 entity.Property(e => e.Description)
                     .HasColumnName("description")
@@ -493,8 +465,7 @@ namespace BM2
                 entity.ToTable("team");
 
                 entity.Property(e => e.Id)
-                    .HasColumnName("id")
-                    .HasColumnType("numeric(28, 0)");
+                    .HasColumnName("id");
 
                 entity.Property(e => e.Comments)
                     .HasColumnName("comments")

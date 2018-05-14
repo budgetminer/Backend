@@ -86,7 +86,7 @@ namespace BM2
                     opt.Password.RequireLowercase = false;
                     opt.Password.RequireUppercase = false;
                 })
-                .AddEntityFrameworkStores<BMContext>()
+                .AddEntityFrameworkStores<IdentityContext>()
                 .AddDefaultTokenProviders();
 
             services.AddCors();

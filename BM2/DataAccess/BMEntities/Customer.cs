@@ -13,7 +13,6 @@ namespace BM2.DataAccess.BMEntities
         }
 
         public string Name { get; set; }
-
         public ICollection<Component> Components { get; set; }
         public ICollection<Individual> Individuals { get; set; }
     }
