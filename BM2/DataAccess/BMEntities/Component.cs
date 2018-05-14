@@ -8,7 +8,7 @@ namespace BM2
     {
         public Component()
         {
-            Partsgroup = new HashSet<PartsGroup>();
+            PartsGroups = new HashSet<PartsGroup>();
         }
 
         public string Short { get; set; }
@@ -16,6 +16,6 @@ namespace BM2
         public int CustomerId { get; set; }
 
         public Customer Customer { get; set; }
-        public ICollection<PartsGroup> Partsgroup { get; set; }
+        public ICollection<PartsGroup> PartsGroups { get; set; }
     }
 }

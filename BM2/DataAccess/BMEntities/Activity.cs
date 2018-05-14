@@ -8,7 +8,7 @@ namespace BM2
     {
         public Activity()
         {
-            Activitycosts = new HashSet<ActivityCosts>();
+            ActivityCosts = new HashSet<ActivityCosts>();
         }
 
         public string Name { get; set; }
@@ -19,6 +19,6 @@ namespace BM2
         public ActivityGroup ActivityGroup { get; set; }
         public Individual Individual { get; set; }
         public Team Team { get; set; }
-        public ICollection<ActivityCosts> Activitycosts { get; set; }
+        public ICollection<ActivityCosts> ActivityCosts { get; set; }
     }
 }

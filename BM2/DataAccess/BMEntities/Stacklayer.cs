@@ -8,14 +8,14 @@ namespace BM2
     {
         public Stacklayer()
         {
-            Activitygroup = new HashSet<ActivityGroup>();
-            Partsgroup = new HashSet<PartsGroup>();
+            ActivityGroups = new HashSet<ActivityGroup>();
+            PartsGroups = new HashSet<PartsGroup>();
         }
 
         public string Short { get; set; }
         public string Description { get; set; }
 
-        public ICollection<ActivityGroup> Activitygroup { get; set; }
-        public ICollection<PartsGroup> Partsgroup { get; set; }
+        public ICollection<ActivityGroup> ActivityGroups { get; set; }
+        public ICollection<PartsGroup> PartsGroups { get; set; }
     }
 }

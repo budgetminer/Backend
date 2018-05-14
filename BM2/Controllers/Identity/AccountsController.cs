@@ -1,22 +1,24 @@
 ﻿using AutoMapper;
+using BM2.Business.Writers;
 using BM2.DataAccess;
 using BM2.DataAccess.IdentityEntities;
 using BM2.Models.IdentityModels;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace BM2.Controllers.Identity
 {
+    /// <summary>
+    /// Used to log in and out.
+    /// </summary>
     public class AccountsController : Controller
     {
         private IMapper _mapper;
         private UserManager<AppUser> _userManager;
         private LoginContext _identityContext;
+        private ICustomerWriter _customerWriter;
 
         /// <summary>
         /// 
@@ -24,11 +26,13 @@ namespace BM2.Controllers.Identity
         /// <param name="mapper"></param>
         /// <param name="userManager"></param>
         /// <param name="context"></param>
-        public AccountsController(IMapper mapper, UserManager<AppUser> userManager, LoginContext context)
+        /// <param name="customerWriter"></param>
+        public AccountsController(IMapper mapper, UserManager<AppUser> userManager, LoginContext context, ICustomerWriter customerWriter)
         {
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
             _userManager = userManager ?? throw new ArgumentNullException(nameof(userManager));
             _identityContext = context ?? throw new ArgumentNullException(nameof(context));
+            _customerWriter = customerWriter ?? throw new ArgumentNullException(nameof(customerWriter));
         }
 
         /// <summary>
@@ -56,6 +60,7 @@ namespace BM2.Controllers.Identity
                 IdentityId = userIdentity.Id,
                 Naam = model.UserName
             };
+            await _customerWriter.Add(new Customer() { Name = model.UserName });
             await _identityContext.AddAsync(customer);
             await _identityContext.SaveChangesAsync();
 

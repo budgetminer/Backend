@@ -59,13 +59,13 @@ namespace BM2
                     .HasColumnType("numeric(28, 0)");
 
                 entity.HasOne(d => d.Individual)
-                    .WithMany(p => p.Activity)
+                    .WithMany(p => p.Activities)
                     .HasForeignKey(d => d.IndividualId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("activity_individual_fk");
 
                 entity.HasOne(d => d.Team)
-                    .WithMany(p => p.Activity)
+                    .WithMany(p => p.Activities)
                     .HasForeignKey(d => d.TeamId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("activity_team_fk");
@@ -115,13 +115,13 @@ namespace BM2
                     .HasColumnType("date");
 
                 entity.HasOne(d => d.Activity)
-                    .WithMany(p => p.Activitycosts)
+                    .WithMany(p => p.ActivityCosts)
                     .HasForeignKey(d => d.ActivityId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("activitycosts_activity_fk");
 
                 entity.HasOne(d => d.Costtype)
-                    .WithMany(p => p.Activitycosts)
+                    .WithMany(p => p.ActivityCosts)
                     .HasForeignKey(d => d.CosttypeId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("activitycosts_costtype_fk");
@@ -150,7 +150,7 @@ namespace BM2
                     .HasColumnType("numeric(28, 0)");
 
                 entity.HasOne(d => d.Stacklayer)
-                    .WithMany(p => p.Activitygroup)
+                    .WithMany(p => p.ActivityGroups)
                     .HasForeignKey(d => d.StacklayerId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("activitygroup_stacklayer_fk");
@@ -179,7 +179,7 @@ namespace BM2
                     .IsUnicode(false);
 
                 entity.HasOne(d => d.Customer)
-                    .WithMany(p => p.Component)
+                    .WithMany(p => p.Components)
                     .HasForeignKey(d => d.CustomerId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("component_customer_fk");
@@ -323,19 +323,19 @@ namespace BM2
                     .HasColumnType("numeric(28, 0)");
 
                 entity.HasOne(d => d.Customer)
-                    .WithMany(p => p.Individual)
+                    .WithMany(p => p.Individuals)
                     .HasForeignKey(d => d.CustomerId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("individual_customer_fk");
 
                 entity.HasOne(d => d.Department)
-                    .WithMany(p => p.Individual)
+                    .WithMany(p => p.Individuals)
                     .HasForeignKey(d => d.DepartmentId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("individual_department_fk");
 
                 entity.HasOne(d => d.Team)
-                    .WithMany(p => p.Individual)
+                    .WithMany(p => p.Individuals)
                     .HasForeignKey(d => d.TeamId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("individual_team_fk");
@@ -398,13 +398,13 @@ namespace BM2
                     .HasColumnType("numeric(18, 0)");
 
                 entity.HasOne(d => d.Individual)
-                    .WithMany(p => p.Part)
+                    .WithMany(p => p.Parts)
                     .HasForeignKey(d => d.IndividualId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("part_individual_fk");
 
                 entity.HasOne(d => d.Partsgroup)
-                    .WithMany(p => p.Part)
+                    .WithMany(p => p.Parts)
                     .HasForeignKey(d => d.PartsGroupId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("part_partsgroup_fk");
@@ -443,13 +443,13 @@ namespace BM2
                     .HasColumnType("numeric(28, 0)");
 
                 entity.HasOne(d => d.Component)
-                    .WithMany(p => p.Partsgroup)
+                    .WithMany(p => p.PartsGroups)
                     .HasForeignKey(d => d.ComponentId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("partsgroup_component_fk");
 
                 entity.HasOne(d => d.Stacklayer)
-                    .WithMany(p => p.Partsgroup)
+                    .WithMany(p => p.PartsGroups)
                     .HasForeignKey(d => d.StacklayerId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("partsgroup_stacklayer_fk");

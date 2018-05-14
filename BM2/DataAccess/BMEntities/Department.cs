@@ -8,12 +8,12 @@ namespace BM2
     {
         public Department()
         {
-            Individual = new HashSet<Individual>();
+            Individuals = new HashSet<Individual>();
         }
 
         public string Short { get; set; }
         public string Description { get; set; }
 
-        public ICollection<Individual> Individual { get; set; }
+        public ICollection<Individual> Individuals { get; set; }
     }
 }

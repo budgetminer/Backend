@@ -8,8 +8,8 @@ namespace BM2
     {
         public Individual()
         {
-            Activity = new HashSet<Activity>();
-            Part = new HashSet<Part>();
+            Activities = new HashSet<Activity>();
+            Parts = new HashSet<Part>();
         }
 
         public int DepartmentId { get; set; }
@@ -21,7 +21,7 @@ namespace BM2
         public Customer Customer { get; set; }
         public Department Department { get; set; }
         public Team Team { get; set; }
-        public ICollection<Activity> Activity { get; set; }
-        public ICollection<Part> Part { get; set; }
+        public ICollection<Activity> Activities { get; set; }
+        public ICollection<Part> Parts { get; set; }
     }
 }

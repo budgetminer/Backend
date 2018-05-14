@@ -8,7 +8,7 @@ namespace BM2
     {
         public PartsGroup()
         {
-            Part = new HashSet<Part>();
+            Parts = new HashSet<Part>();
         }
 
         public string Groupname { get; set; }
@@ -18,6 +18,6 @@ namespace BM2
 
         public Component Component { get; set; }
         public Stacklayer Stacklayer { get; set; }
-        public ICollection<Part> Part { get; set; }
+        public ICollection<Part> Parts { get; set; }
     }
 }
