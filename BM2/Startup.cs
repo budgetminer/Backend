@@ -78,7 +78,7 @@ namespace BM2
             services.AddDbContext<BMContext>(options => options.UseSqlServer(mainDb));
             services.AddDbContext<IdentityContext>(options => options.UseSqlServer(identityDb));
 
-            services.AddIdentity<AppUser, AppRole>(opt =>
+            services.AddIdentity<IdentityUser, IdentityRole>(opt =>
                 {
                     opt.Password.RequireDigit = true;
                     opt.Password.RequiredLength = 8;

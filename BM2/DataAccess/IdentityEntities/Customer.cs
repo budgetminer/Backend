@@ -10,7 +10,7 @@ namespace BM2.DataAccess.IdentityEntities
     {
         public int Id { get; set; }
         public string IdentityId { get; set; }
-        public AppUser Identity { get; set; }
+        public IdentityUser Identity { get; set; }
         public string Naam { get; internal set; }
     }
 }

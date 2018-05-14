@@ -6,13 +6,12 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
-using Microsoft.EntityFrameworkCore.ValueGeneration;
 using System;
 
 namespace BM2.Migrations
 {
     [DbContext(typeof(IdentityContext))]
-    [Migration("20180514140628_initLogin")]
+    [Migration("20180514142325_initLogin")]
     partial class initLogin
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -105,9 +104,6 @@ namespace BM2.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
 
-                    b.Property<string>("Discriminator")
-                        .IsRequired();
-
                     b.Property<string>("Email")
                         .HasMaxLength(256);
 
@@ -147,8 +143,6 @@ namespace BM2.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
-
-                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityUser");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -216,26 +210,16 @@ namespace BM2.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("BM2.DataAccess.IdentityEntities.AppUser", b =>
-                {
-                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
-
-
-                    b.ToTable("AppUser");
-
-                    b.HasDiscriminator().HasValue("AppUser");
-                });
-
             modelBuilder.Entity("BM2.DataAccess.IdentityEntities.Admin", b =>
                 {
-                    b.HasOne("BM2.DataAccess.IdentityEntities.AppUser", "Identity")
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "Identity")
                         .WithMany()
                         .HasForeignKey("IdentityId");
                 });
 
             modelBuilder.Entity("BM2.DataAccess.IdentityEntities.Customer", b =>
                 {
-                    b.HasOne("BM2.DataAccess.IdentityEntities.AppUser", "Identity")
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "Identity")
                         .WithMany()
                         .HasForeignKey("IdentityId");
                 });

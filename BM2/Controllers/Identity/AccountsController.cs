@@ -17,7 +17,7 @@ namespace BM2.Controllers.Identity
     /// </summary>
     public class AccountsController : Controller
     {
-        private UserManager<AppUser> _userManager;
+        private UserManager<IdentityUser> _userManager;
         private IdentityContext _identityContext;
         private ICustomerWriter _customerWriter;
 
@@ -28,7 +28,7 @@ namespace BM2.Controllers.Identity
         /// <param name="userManager"></param>
         /// <param name="context"></param>
         /// <param name="customerWriter"></param>
-        public AccountsController(UserManager<AppUser> userManager, IdentityContext context, ICustomerWriter customerWriter)
+        public AccountsController(UserManager<IdentityUser> userManager, IdentityContext context, ICustomerWriter customerWriter)
         {
             _userManager = userManager ?? throw new ArgumentNullException(nameof(userManager));
             _identityContext = context ?? throw new ArgumentNullException(nameof(context));
@@ -50,7 +50,7 @@ namespace BM2.Controllers.Identity
                 return BadRequest(ModelState);
             }
 
-            var userIdentity = Mapper.Map<AppUser>(model);
+            var userIdentity = Mapper.Map<IdentityUser>(model);
             var result = await _userManager.CreateAsync(userIdentity, model.Password);
 
             if (!result.Succeeded) throw new NotImplementedException();
