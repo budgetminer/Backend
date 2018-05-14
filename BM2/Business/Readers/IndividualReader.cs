@@ -23,10 +23,9 @@ namespace BM2.Business.Readers
                 var repo = uow.GetRepository<Individual>();
                 var whereFilter = new WhereFilter<Individual>(null);
 
-                whereFilter.AddExpression(i => i.TeamId == teamId));
+                whereFilter.AddExpression(i => i.TeamId == teamId);
 
                 return (await repo.QueryAsync(whereFilter.Expression)).ToList(); 
-
             }
         }
     }
