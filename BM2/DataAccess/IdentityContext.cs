@@ -8,22 +8,21 @@ using System.Threading.Tasks;
 
 namespace BM2.DataAccess
 {
-    public class LoginContext : IdentityDbContext
+    public class IdentityContext : IdentityDbContext
     {
-        public LoginContext(DbContextOptions options): base(options)
+        public IdentityContext(DbContextOptions options): base(options)
         {
             
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.HasDefaultSchema("identity");
+            builder.HasDefaultSchema("main");
 
             base.OnModelCreating(builder);
         }
 
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Customer> Customers { get; set; }
-
     }
 }

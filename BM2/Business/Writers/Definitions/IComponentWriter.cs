@@ -1,4 +1,5 @@
 ﻿using BM2.Business.Base;
+using BM2.DataAccess.BMEntities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

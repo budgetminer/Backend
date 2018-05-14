@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BM2.Business.Base;
 using BM2.Business.Readers.Definitions;
+using BM2.DataAccess.BMEntities;
 using DataAccess;
 using DataAccess.Query;
 

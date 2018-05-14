@@ -7,12 +7,12 @@ namespace BM2.Constants.Identity
 {
     public static class JwtClaimIdentifiers
     {
-
         public const string Rol = "rol", Id = "id";
     }
 
     public static class JwtClaims
     {
         public const string ApiAccess = "api-access";
+        public const string Admin = "admin";
     }
 }

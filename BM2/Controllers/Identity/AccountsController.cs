@@ -2,7 +2,9 @@
 using BM2.Business.Writers;
 using BM2.DataAccess;
 using BM2.DataAccess.IdentityEntities;
+using BM2.DataAccess.BMEntities;
 using BM2.Models.IdentityModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -15,9 +17,8 @@ namespace BM2.Controllers.Identity
     /// </summary>
     public class AccountsController : Controller
     {
-        private IMapper _mapper;
         private UserManager<AppUser> _userManager;
-        private LoginContext _identityContext;
+        private IdentityContext _identityContext;
         private ICustomerWriter _customerWriter;
 
         /// <summary>
@@ -27,9 +28,8 @@ namespace BM2.Controllers.Identity
         /// <param name="userManager"></param>
         /// <param name="context"></param>
         /// <param name="customerWriter"></param>
-        public AccountsController(IMapper mapper, UserManager<AppUser> userManager, LoginContext context, ICustomerWriter customerWriter)
+        public AccountsController(UserManager<AppUser> userManager, IdentityContext context, ICustomerWriter customerWriter)
         {
-            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
             _userManager = userManager ?? throw new ArgumentNullException(nameof(userManager));
             _identityContext = context ?? throw new ArgumentNullException(nameof(context));
             _customerWriter = customerWriter ?? throw new ArgumentNullException(nameof(customerWriter));
@@ -50,18 +50,28 @@ namespace BM2.Controllers.Identity
                 return BadRequest(ModelState);
             }
 
-            var userIdentity = _mapper.Map<AppUser>(model);
+            var userIdentity = Mapper.Map<AppUser>(model);
             var result = await _userManager.CreateAsync(userIdentity, model.Password);
 
             if (!result.Succeeded) throw new NotImplementedException();
-
-            var customer = new DataAccess.IdentityEntities.Customer()
+            if (model.IsAdmin)
             {
-                IdentityId = userIdentity.Id,
-                Naam = model.UserName
-            };
-            await _customerWriter.Add(new Customer() { Name = model.UserName });
-            await _identityContext.AddAsync(customer);
+                var customer = new DataAccess.IdentityEntities.Customer()
+                {
+                    IdentityId = userIdentity.Id,
+                    Naam = model.UserName
+                };
+                await _customerWriter.Add(new DataAccess.BMEntities.Customer() { Name = model.UserName });
+                await _identityContext.AddAsync(customer);
+            }
+            else
+            {
+                var admin = new Admin()
+                {
+                    IdentityId = userIdentity.Id,
+                };
+                await _identityContext.AddAsync(admin);
+            }
             await _identityContext.SaveChangesAsync();
 
             return new OkResult();

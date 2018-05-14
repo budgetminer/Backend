@@ -29,7 +29,8 @@ namespace BM2
         public IConfiguration Configuration { get; }
 
         private const string SecretKey = "iNivDmHLpUA223sqsfhqGbMRdRj1PVkH"; //securize this
-        private const string connectionLocal = @"Server=(localdb)\mssqllocaldb;Database=BM;Trusted_Connection=True;";
+        private const string mainDb = @"Server=(localdb)\mssqllocaldb;Database=Miner;Trusted_Connection=True;";
+        private const string identityDb = @"Server=(localdb)\mssqllocaldb;Database=Identity;Trusted_Connection=True;";
         private readonly SymmetricSecurityKey _signingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(SecretKey));
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -67,20 +68,21 @@ namespace BM2
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("ApiUser", policy => policy.RequireClaim(Constants.Identity.JwtClaimIdentifiers.Rol, Constants.Identity.JwtClaims.ApiAccess));
+                options.AddPolicy("Admin", policy => policy.RequireClaim(Constants.Identity.JwtClaimIdentifiers.Rol, Constants.Identity.JwtClaims.Admin));
             });
 
             //services
             services.AddBusinessServices();
             services.AddAutoMapper();
             services.AddDataAccess<BMContext>();
-            services.AddDbContext<BMContext>(options => options.UseSqlServer(connectionLocal));
-            services.AddDbContext<LoginContext>(options => options.UseSqlServer(connectionLocal));
+            services.AddDbContext<BMContext>(options => options.UseSqlServer(mainDb));
+            services.AddDbContext<IdentityContext>(options => options.UseSqlServer(identityDb));
 
             services.AddIdentity<AppUser, AppRole>(opt =>
                 {
                     opt.Password.RequireDigit = true;
                     opt.Password.RequiredLength = 8;
-                    opt.Password.RequireNonAlphanumeric = true;
+                    opt.Password.RequireNonAlphanumeric = false;
                     opt.Password.RequireLowercase = false;
                     opt.Password.RequireUppercase = false;
                 })

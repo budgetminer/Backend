@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using DataAccess.Context;
+using BM2.DataAccess.BMEntities;
 
 namespace BM2
 {
@@ -25,17 +26,10 @@ namespace BM2
         public virtual DbSet<Stacklayer> StackLayers { get; set; }
         public virtual DbSet<Team> Teams { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=BM;Trusted_Connection=True;");
-            }
-        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasDefaultSchema("miner");
+            modelBuilder.HasDefaultSchema("main");
 
             modelBuilder.Entity<Activity>(entity =>
             {

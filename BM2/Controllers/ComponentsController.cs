@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using BM2.Business.Base;
 using BM2.Business.Readers.Definitions;
 using BM2.Business.Writers.Definitions;
+using BM2.DataAccess.BMEntities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BM2.Controllers

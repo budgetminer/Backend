@@ -11,9 +11,6 @@ namespace BM2.DataAccess.IdentityEntities
     /// </summary>
     public class AppUser : IdentityUser
     {
-        /// <summary>
-        /// Name of the user
-        /// </summary>
-        public string UserName { get; set; }
+
     }
 }
