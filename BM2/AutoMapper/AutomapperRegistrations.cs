@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
-using BM2.DataAccess.IdentityEntities;
-using BM2.Models;
-using BM2.Models.IdentityModels;
+using BudgetMiner.DataAccess.IdentityEntities;
+using BudgetMiner.Models;
+using BudgetMiner.Models.IdentityModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Generic;
 
-namespace BM2 {
+namespace BudgetMiner {
     public static class AutoMapperRegistration
     {
         public static IServiceCollection AddAutoMapper(this IServiceCollection services)

@@ -2,7 +2,7 @@
 using Swashbuckle.SwaggerGen.Generator;
 using System.Collections.Generic;
 
-namespace BM2.Options
+namespace BudgetMiner.Options
 {
     public class LowerCaseFilter : IDocumentFilter
     {

@@ -1,4 +1,4 @@
-﻿using BM2.DataAccess.IdentityEntities;
+﻿using BudgetMiner.DataAccess.IdentityEntities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BM2.DataAccess
+namespace BudgetMiner.DataAccess
 {
     public class IdentityContext : IdentityDbContext<IdentityUser>
     {

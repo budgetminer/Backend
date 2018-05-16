@@ -1,13 +1,13 @@
-﻿using BM2.Business.Readers;
-using BM2.Business.Readers.Definitions;
-using BM2.Business.Writers;
-using BM2.Business.Writers.Definitions;
+﻿using BudgetMiner.Business.Readers;
+using BudgetMiner.Business.Readers.Definitions;
+using BudgetMiner.Business.Writers;
+using BudgetMiner.Business.Writers.Definitions;
 using DataAccess;
 using DataAccess.Uow;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace BM2
+namespace BudgetMiner
 {
     public static class DependencyRegistration
     {

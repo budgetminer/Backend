@@ -1,9 +1,9 @@
 ﻿using DataAccess;
 using System;
-using BM2.Business.Base;
-using BM2.DataAccess.BMEntities;
+using BudgetMiner.Business.Base;
+using BudgetMiner.DataAccess.BMEntities;
 
-namespace BM2.Business.Readers
+namespace BudgetMiner.Business.Readers
 {
     public class CustomerReader : ReaderBase<Customer>, ICustomerReader
     {

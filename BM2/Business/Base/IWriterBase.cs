@@ -1,7 +1,7 @@
 ﻿using DataAccess.Entities;
 using System.Threading.Tasks;
 
-namespace BM2.Business.Base
+namespace BudgetMiner.Business.Base
 {
     public interface IWriterBase<T> where T : EntityBase
     {

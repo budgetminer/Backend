@@ -3,7 +3,7 @@ using DataAccess.Entities;
 using System;
 using System.Threading.Tasks;
 
-namespace BM2.Business.Base
+namespace BudgetMiner.Business.Base
 {
     public abstract class WriterBase<T> : IWriterBase<T> where T : EntityBase, new()
     {

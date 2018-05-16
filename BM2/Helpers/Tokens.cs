@@ -1,11 +1,11 @@
-﻿using BM2.Auth;
-using BM2.Models.IdentityModels;
+﻿using BudgetMiner.Auth;
+using BudgetMiner.Models.IdentityModels;
 using Newtonsoft.Json;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace BM2.Helpers
+namespace BudgetMiner.Helpers
 {
     public class Tokens
     {

@@ -1,16 +1,16 @@
 ﻿using AutoMapper;
-using BM2.Business.Writers;
-using BM2.DataAccess;
-using BM2.DataAccess.IdentityEntities;
-using BM2.DataAccess.BMEntities;
-using BM2.Models.IdentityModels;
+using BudgetMiner.Business.Writers;
+using BudgetMiner.DataAccess;
+using BudgetMiner.DataAccess.IdentityEntities;
+using BudgetMiner.DataAccess.BMEntities;
+using BudgetMiner.Models.IdentityModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 
-namespace BM2.Controllers.Identity
+namespace BudgetMiner.Controllers.Identity
 {
     /// <summary>
     /// Used to log in and out.

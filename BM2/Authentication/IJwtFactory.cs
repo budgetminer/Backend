@@ -1,7 +1,7 @@
 ﻿using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace BM2.Auth
+namespace BudgetMiner.Auth
 {
     public interface IJwtFactory
     {

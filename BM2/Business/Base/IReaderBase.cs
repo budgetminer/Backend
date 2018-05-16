@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BM2.Business.Base
+namespace BudgetMiner.Business.Base
 {
     public interface IReaderBase<T> where T : EntityBase
     {
