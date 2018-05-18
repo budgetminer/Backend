@@ -1,4 +1,6 @@
-﻿using BudgetMiner.Business.Base;
+﻿using AutoMapper;
+using BM2.Models.ViewModels;
+using BudgetMiner.Business.Base;
 using BudgetMiner.Business.Readers.Definitions;
 using BudgetMiner.Business.Writers.Definitions;
 using BudgetMiner.DataAccess.BMEntities;
@@ -51,6 +53,26 @@ namespace BudgetMiner.Controllers
         public async Task<IActionResult> GetForComponent(int componentId)
         {
             var result = await _reader.GetForComponent(componentId);
+
+            if (result != null)
+            {
+                return Ok(result);
+            }
+            else return NotFound(result);
+        }
+
+        /// <summary>
+        /// Get a specific partgroup with its part-children 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [ProducesResponseType(typeof(PartsGroup), 200)]
+        [HttpGet("{id:int}")]
+        public override async Task<IActionResult> Get(int id)
+        {
+            var entity = await _reader.GetWithChildren(id);
+
+            var result = Mapper.Map<PartsGroupModel>(entity);
 
             if (result != null)
             {

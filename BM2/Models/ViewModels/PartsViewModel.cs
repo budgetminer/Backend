@@ -21,7 +21,7 @@ namespace BM2.Models.ViewModels
         public string Metric { get; set; }
 
         public IndividualModel Individual { get; set; }
-        public ICollection<CostModel> CostModels { get; set; }
+        public ICollection<CostModel> Costs { get; set; }
         public PartsTypeModel PartType { get; set; }
     }
 }

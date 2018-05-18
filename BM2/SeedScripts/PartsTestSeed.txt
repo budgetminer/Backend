@@ -41,7 +41,7 @@ INSERT INTO main.partsgroup (component_id, comments, groupname, stacklayer_id) V
 INSERT INTO main.partsgroup (component_id, comments, groupname, stacklayer_id) VALUES (3, 'comments for a partsgroup 3' , 'pg3', 1);
 INSERT INTO main.partsgroup (component_id, comments, groupname, stacklayer_id) VALUES (1, 'comments for a partsgroup 4' , 'pg4', 1);
 INSERT INTO main.partsgroup (component_id, comments, groupname, stacklayer_id) VALUES (1, 'comments for a partsgroup 5' , 'pg5', 2);
-INSERT INTO main.partsgroup (component_id, comments, groupname, stacklayer_id) VALUES (1, 'comments for a partsgroup 6 , 'pg6', 1);
+INSERT INTO main.partsgroup (component_id, comments, groupname, stacklayer_id) VALUES (1, 'comments for a partsgroup 6' , 'pg6', 1);
 
 -- Parts
 

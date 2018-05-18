@@ -106,9 +106,9 @@ namespace BudgetMiner
                     }
                 });
                 c.DocumentFilter<LowerCaseFilter>();
-                var basePath = PlatformServices.Default.Application.ApplicationBasePath;
-                var xmlPath = Path.Combine(basePath, "BudgetMiner.xml");
-                c.IncludeXmlComments(xmlPath);
+                //var basePath = PlatformServices.Default.Application.ApplicationBasePath;
+                //var xmlPath = Path.Combine(basePath, "BudgetMiner.xml");
+                //c.IncludeXmlComments(xmlPath);
             });
         }
 

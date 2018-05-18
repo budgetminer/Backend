@@ -1,4 +1,5 @@
-﻿using BudgetMiner.Business.Base;
+﻿using BM2.Models.ViewModels;
+using BudgetMiner.Business.Base;
 using BudgetMiner.DataAccess.BMEntities;
 using System;
 using System.Collections.Generic;
@@ -11,5 +12,6 @@ namespace BudgetMiner.Business.Readers.Definitions
     {
         Task<List<PartsGroup>> GetForStackLayerAndComponent(int componentId, int stacklayerId);
         Task<List<PartsGroup>> GetForComponent(int componentId);
+        Task<PartsGroup> GetWithChildren(int id);
     }
 }
