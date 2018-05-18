@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BM2.Business.Base;
-using BM2.Business.Readers.Definitions;
-using BM2.DataAccess.BMEntities;
+using BudgetMiner.Business.Base;
+using BudgetMiner.Business.Readers.Definitions;
+using BudgetMiner.DataAccess.BMEntities;
 using DataAccess;
 using DataAccess.Query;
 
-namespace BM2.Business.Readers
+namespace BudgetMiner.Business.Readers
 {
     public class ComponentReader : ReaderBase<Component>, IComponentReader
     {

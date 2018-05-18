@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace BM2.DataAccess.BMEntities
+namespace BudgetMiner.DataAccess.BMEntities
 {
     public partial class PartType : EntityBase
     {

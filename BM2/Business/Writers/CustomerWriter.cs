@@ -1,8 +1,8 @@
-﻿using BM2.Business.Base;
-using BM2.DataAccess.BMEntities;
+﻿using BudgetMiner.Business.Base;
+using BudgetMiner.DataAccess.BMEntities;
 using DataAccess;
 
-namespace BM2.Business.Writers
+namespace BudgetMiner.Business.Writers
 {
     public class CustomerWriter : WriterBase<Customer>, ICustomerWriter
     {

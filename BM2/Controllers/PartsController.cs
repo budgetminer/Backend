@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BM2.Business.Base;
-using BM2.Business.Readers.Definitions;
-using BM2.Business.Writers.Definitions;
-using BM2.DataAccess.BMEntities;
+using BudgetMiner.Business.Base;
+using BudgetMiner.Business.Readers.Definitions;
+using BudgetMiner.Business.Writers.Definitions;
+using BudgetMiner.DataAccess.BMEntities;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BM2.Controllers
+namespace BudgetMiner.Controllers
 {
     [Route("[controller]")]
     public class PartsController : ControllerBase<Part>

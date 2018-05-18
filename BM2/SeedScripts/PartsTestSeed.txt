@@ -1,0 +1,59 @@
+﻿-- Customer 
+
+INSERT INTO main.customer (name) VALUES ('Eandis');
+INSERT INTO main.customer (name) VALUES ('BPost');
+INSERT INTO main.customer (name) VALUES ('Fortis');
+
+-- Team
+
+INSERT INTO main.team (name, comments) VALUES ('Eandis1', 'Comments for team Eandis1 ');
+INSERT INTO main.team (name, comments) VALUES ('Eandis2', 'Comments for team Eandis2 ');
+INSERT INTO main.team (name, comments) VALUES ('Eandis3', 'Comments for team Eandis3 ');
+
+
+ 
+-- Individuals
+
+INSERT INTO main.individual (customer_id, department_id, firstname, lastname, team_id) VALUES (1,1, 'Tim', 'Vercauteren', 1);
+INSERT INTO main.individual (customer_id, department_id, firstname, lastname, team_id) VALUES (1,1, 'Astrid', 'Vercauteren', 1);
+INSERT INTO main.individual (customer_id, department_id, firstname, lastname, team_id) VALUES (1,2, 'Hilde', 'Daneels', 2);
+INSERT INTO main.individual (customer_id, department_id, firstname, lastname, team_id) VALUES (1,2, 'Jannick', 'Vercauteren', 3);
+
+
+-- Component
+
+INSERT INTO main.component (customer_id, short, description) VALUES (1, 'ORACLE', 'oracle databases');
+INSERT INTO main.component (customer_id, short, description) VALUES (1, 'MICROSOFT', 'windows licenses');
+INSERT INTO main.component (customer_id, short, description) VALUES (1, 'HP', 'hardware');
+
+-- Stacklayer
+
+INSERT INTO main.stacklayer (short, description) VALUES ('LAYER1', 'description of layer 1');
+INSERT INTO main.stacklayer (short, description) VALUES ('LAYER2', 'description of layer 2');
+INSERT INTO main.stacklayer (short, description) VALUES ('LAYER3', 'description of layer 3');
+
+
+
+-- PartsGroups
+
+INSERT INTO main.partsgroup (component_id, comments, groupname, stacklayer_id) VALUES (1, 'comments for a partsgroup 1' , 'pg1', 1);
+INSERT INTO main.partsgroup (component_id, comments, groupname, stacklayer_id) VALUES (2, 'comments for a partsgroup 2' , 'pg2', 1);
+INSERT INTO main.partsgroup (component_id, comments, groupname, stacklayer_id) VALUES (3, 'comments for a partsgroup 3' , 'pg3', 1);
+INSERT INTO main.partsgroup (component_id, comments, groupname, stacklayer_id) VALUES (1, 'comments for a partsgroup 4' , 'pg4', 1);
+INSERT INTO main.partsgroup (component_id, comments, groupname, stacklayer_id) VALUES (1, 'comments for a partsgroup 5' , 'pg5', 2);
+INSERT INTO main.partsgroup (component_id, comments, groupname, stacklayer_id) VALUES (1, 'comments for a partsgroup 6 , 'pg6', 1);
+
+-- Parts
+
+
+INSERT INTO main.part (individual_id, PartTypeId, partsgroup_id, comments, contractexpirydate, contractno, metric, name, renawaldate, units, vendor, yearlyincrease) VALUES (1, 1, 1, 'random comment voor part', null, 'contractnr', 'metric', 'part1', null, 33, 25, 300);
+INSERT INTO main.part (individual_id, PartTypeId, partsgroup_id, comments, contractexpirydate, contractno, metric, name, renawaldate, units, vendor, yearlyincrease) VALUES (1, 1, 1, 'random comment voor part', null, 'contractnr2', 'metric1', 'part2', null, 33, 25, 300);
+INSERT INTO main.part (individual_id, PartTypeId, partsgroup_id, comments, contractexpirydate, contractno, metric, name, renawaldate, units, vendor, yearlyincrease) VALUES (2, 1, 1, 'random comment voor part', null, 'contractnr3', 'metric2', 'part3', null, 33, 25, 300);
+INSERT INTO main.part (individual_id, PartTypeId, partsgroup_id, comments, contractexpirydate, contractno, metric, name, renawaldate, units, vendor, yearlyincrease) VALUES (2, 1, 2, 'random comment voor part', null, 'contractnr4', 'metric3', 'part4', null, 33, 25, 300);
+INSERT INTO main.part (individual_id, PartTypeId, partsgroup_id, comments, contractexpirydate, contractno, metric, name, renawaldate, units, vendor, yearlyincrease) VALUES (1, 2, 2, 'random comment voor part', null, 'contractnr5', 'metric4', 'part5', null, 33, 25, 300);
+INSERT INTO main.part (individual_id, PartTypeId, partsgroup_id, comments, contractexpirydate, contractno, metric, name, renawaldate, units, vendor, yearlyincrease) VALUES (1, 3, 1, 'random comment voor part', null, 'contractnr6', 'metric5', 'part6', null, 33, 25, 300);
+
+
+
+
+

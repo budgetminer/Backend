@@ -1,0 +1,10 @@
+﻿INSERT INTO main.parttype (short, description) VALUES ('parttype1', 'Description of parttype 1');
+INSERT INTO main.parttype (short, description) VALUES ('parttype2', 'Description of parttype 2');
+INSERT INTO main.parttype (short, description) VALUES ('parttype3', 'Description of parttype 4');
+INSERT INTO main.costtype (short, description) VALUES ('costtype1', 'Description of costtype 1');
+INSERT INTO main.costtype (short, description) VALUES ('costtype2', 'Description of costtype 2');
+INSERT INTO main.costtype (short, description) VALUES ('costtype3', 'Description of costtype 4');
+INSERT INTO main.department (short, description) VALUES ('departmen', 'Description of department 1');
+INSERT INTO main.department (short, description) VALUES ('departmen', 'Description of department 2');
+INSERT INTO main.department (short, description) VALUES ('departmen', 'Description of department 4');
+

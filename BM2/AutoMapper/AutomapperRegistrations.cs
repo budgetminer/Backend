@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Generic;
 
-namespace BM2 {
+namespace BudgetMiner {
     public static class AutoMapperRegistration
     {
         public static IServiceCollection AddAutoMapper(this IServiceCollection services)

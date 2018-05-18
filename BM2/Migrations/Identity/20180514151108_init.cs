@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 using System.Collections.Generic;
 
-namespace BM2.Migrations.Identity
+namespace BudgetMiner.Migrations.Identity
 {
     public partial class init : Migration
     {

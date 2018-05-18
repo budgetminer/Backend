@@ -1,15 +1,15 @@
-﻿using BM2.Auth;
+﻿using BudgetMiner.Auth;
 using System.Threading.Tasks;
-using BM2.DataAccess.IdentityEntities;
-using BM2.Models.IdentityModels;
+using BudgetMiner.DataAccess.IdentityEntities;
+using BudgetMiner.Models.IdentityModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using System.Security.Claims;
-using BM2.Helpers;
+using BudgetMiner.Helpers;
 
-namespace BM2.Controllers.Identity
+namespace BudgetMiner.Controllers.Identity
 {
     [Route("api/auth")]
     public class AuthController : Controller

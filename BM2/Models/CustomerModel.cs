@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BM2.Models
+namespace BudgetMiner.Models
 {
     public class CustomerModel : ModelBase
     {

@@ -3,11 +3,11 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Principal;
 using System.Threading.Tasks;
-using BM2.Models.IdentityModels;
+using BudgetMiner.Models.IdentityModels;
 using Microsoft.Extensions.Options;
 
 
-namespace BM2.Auth
+namespace BudgetMiner.Auth
 {
     public class JwtFactory : IJwtFactory
     {

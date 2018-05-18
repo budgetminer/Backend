@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using DataAccess.Context;
-using BM2.DataAccess.BMEntities;
+using BudgetMiner.DataAccess.BMEntities;
 
-namespace BM2
+namespace BudgetMiner
 {
     public partial class BMContext : EntityContextBase<BMContext>
     {

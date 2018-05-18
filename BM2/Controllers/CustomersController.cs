@@ -1,12 +1,12 @@
-﻿using BM2.Business.Readers;
-using BM2.Business.Writers;
-using BM2.DataAccess.BMEntities;
+﻿using BudgetMiner.Business.Readers;
+using BudgetMiner.Business.Writers;
+using BudgetMiner.DataAccess.BMEntities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace BM2.Controllers
+namespace BudgetMiner.Controllers
 {
     [Route("[controller]")]
     public class CustomersController : ControllerBase<Customer>
