@@ -28,11 +28,14 @@ namespace BM2.Controllers
         /// <param name="customerId"></param>
         /// <returns></returns>
         [HttpGet("customer/{customerId:int}")]
-        public Task<IActionResult> GetComponentsForCustomer(int customerId)
+        public async Task<IActionResult> GetComponentsForCustomer(int customerId)
         {
-            var result = _reader.GetComponentsForCustomer(customerId);
+            var result = await _reader.GetComponentsForCustomer(customerId);
 
-            throw new NotImplementedException();
+            if (result != null) {
+                return Ok(result);
+            }
+            else return NotFound(result);
         }
     }
 }

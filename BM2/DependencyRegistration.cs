@@ -29,7 +29,8 @@ namespace BM2
             services.AddTransient<IPartsWriter, PartsWriter>();
             services.AddTransient<IStacklayerReader, StacklayerReader>();
             services.AddTransient<IStacklayerWriter, StacklayerWriter>();
-
+            services.AddTransient<IPartsGroupReader, PartsGroupReader>();
+            services.AddTransient<IPartsGroupWriter, PartsGroupWriter>();
 
 
             services.AddTransient<ITeamReader, TeamReader>();
