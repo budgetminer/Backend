@@ -5,19 +5,19 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Swashbuckle.Swagger.Model;
 using Microsoft.Extensions.PlatformAbstractions;
-using BM2.Options;
+using BudgetMiner.Options;
 using DataAccess;
-using BM2.DataAccess;
+using BudgetMiner.DataAccess;
 using System.IO;
-using BM2.DataAccess.IdentityEntities;
+using BudgetMiner.DataAccess.IdentityEntities;
 using Microsoft.AspNetCore.Identity;
-using BM2.Models.IdentityModels;
+using BudgetMiner.Models.IdentityModels;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 
-namespace BM2
+namespace BudgetMiner
 {
     public class Startup
     {
@@ -106,9 +106,9 @@ namespace BM2
                     }
                 });
                 c.DocumentFilter<LowerCaseFilter>();
-                var basePath = PlatformServices.Default.Application.ApplicationBasePath;
-                var xmlPath = Path.Combine(basePath, "BM2.xml");
-                c.IncludeXmlComments(xmlPath);
+                //var basePath = PlatformServices.Default.Application.ApplicationBasePath;
+                //var xmlPath = Path.Combine(basePath, "BudgetMiner.xml");
+                //c.IncludeXmlComments(xmlPath);
             });
         }
 

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BM2.DataAccess.IdentityEntities
+namespace BudgetMiner.DataAccess.IdentityEntities
 {
     public class Admin
     {

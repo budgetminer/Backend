@@ -1,11 +1,11 @@
-﻿using BM2.Business.Base;
-using BM2.Business.Exceptions;
+﻿using BudgetMiner.Business.Base;
+using BudgetMiner.Business.Exceptions;
 using DataAccess.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 
-namespace BM2.Controllers
+namespace BudgetMiner.Controllers
 {
     public abstract class ControllerBase<T> : Controller where T : EntityBase
     {

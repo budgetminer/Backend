@@ -1,9 +1,9 @@
-﻿using BM2.Business.Base;
-using BM2.Business.Writers.Definitions;
-using BM2.DataAccess.BMEntities;
+﻿using BudgetMiner.Business.Base;
+using BudgetMiner.Business.Writers.Definitions;
+using BudgetMiner.DataAccess.BMEntities;
 using DataAccess;
 
-namespace BM2.Business.Writers
+namespace BudgetMiner.Business.Writers
 {
     public class StacklayerWriter : WriterBase<Stacklayer>, IStacklayerWriter
     {

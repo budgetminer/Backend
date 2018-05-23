@@ -1,16 +1,12 @@
-﻿using DataAccess.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace BudgetMiner.DataAccess.BMEntities
+namespace BM2.Models.ViewModels
 {
-    public partial class Part : EntityBase
+    public class PartModel
     {
-        public Part()
-        {
-            Costs = new HashSet<Costs>();
-        }
-
         public decimal? Vendor { get; set; }
         public string Name { get; set; }
         public string ContractNumber { get; set; }
@@ -24,9 +20,8 @@ namespace BudgetMiner.DataAccess.BMEntities
         public decimal? Yearlyincrease { get; set; }
         public string Metric { get; set; }
 
-        public Individual Individual { get; set; }
-        public PartsGroup Partsgroup { get; set; }
-        public ICollection<Costs> Costs { get; set; }
-        public PartType PartType { get; set; }
+        public IndividualModel Individual { get; set; }
+        public ICollection<CostModel> Costs { get; set; }
+        public PartsTypeModel PartType { get; set; }
     }
 }

@@ -1,7 +1,7 @@
-﻿using BM2.Business.Base;
-using BM2.DataAccess.BMEntities;
+﻿using BudgetMiner.Business.Base;
+using BudgetMiner.DataAccess.BMEntities;
 
-namespace BM2.Business.Writers
+namespace BudgetMiner.Business.Writers
 {
     public interface ITeamWriter : IWriterBase<Team>
     {

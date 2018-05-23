@@ -1,12 +1,13 @@
 ﻿using AutoMapper;
-using BM2.DataAccess.IdentityEntities;
-using BM2.Models;
-using BM2.Models.IdentityModels;
+using BM2.Models.ViewModels;
+using BudgetMiner.DataAccess.BMEntities;
+using BudgetMiner.Models.IdentityModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Generic;
 
-namespace BM2 {
+namespace BudgetMiner
+{
     public static class AutoMapperRegistration
     {
         public static IServiceCollection AddAutoMapper(this IServiceCollection services)
@@ -31,10 +32,17 @@ namespace BM2 {
         {
             public EntitiesToModels()
             {
-                CreateMap<DataAccess.IdentityEntities.Customer, Customer>();
+                CreateMap<DataAccess.IdentityEntities.Customer, DataAccess.BMEntities.Customer>();
                 CreateMap<RegistrationViewModel, IdentityUser>()
                     .ForMember(user => user.UserName, opt => opt.MapFrom(model => model.UserName));
+                CreateMap<PartsGroup, PartsGroupModel>();
+                CreateMap<Part, PartModel>();
+                CreateMap<Costs, CostModel>();
+                CreateMap<PartType, PartsTypeModel>();
+                CreateMap<CostType, CostTypeModel>();
+                CreateMap<Individual, IndividualModel>();
             }
         }
+
     }
 }
